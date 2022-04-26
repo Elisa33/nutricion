@@ -19,30 +19,33 @@
 
 @layer base {
   h1 {
-    @apply text-5xl text-primary;
+    @apply text-5xl text-white;
   }
   h2 {
-    @apply pb-6 text-3xl text-secondary;
+    @apply pb-2 text-3xl text-secondary;
   }
   h3{
-    @apply text-lg text-green;
+    @apply text-lg capitalize text-green;
   }
   input{
-    @apply block p-2 border border-gray-300 rounded focus:outline-none focus:border-olive;
+    @apply block p-2 border border-gray-300 rounded bg-neutral focus:outline-none focus:border-olive;
   }
   input[type="number"]{
-    @apply block p-2 border border-gray-300 rounded focus:outline-none focus:border-olive;
+    @apply block p-2 border border-gray-300 rounded bg-neutral focus:outline-none focus:border-olive;
   }
   input[type="email"]{
-    @apply block p-2 border border-gray-300 rounded focus:outline-none focus:border-olive;
+    @apply block p-2 border border-gray-300 rounded bg-neutral focus:outline-none focus:border-olive;
   }
   input[type="checkbox"]{
     @apply block p-2 border border-gray-300 rounded-full focus:outline-none focus:border-gray-300;
+  }
+  input[type="submit"]{
+    @apply block px-10 bg-white border-none rounded-lg text-primary hover:bg-primary hover:text-white;
   }
   label{
     @apply text-gray-500
   }
   section{
-    @apply py-12
+    @apply px-5 py-8 my-12 rounded-lg bg-neutral;
   }
 }

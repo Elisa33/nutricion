@@ -32,27 +32,27 @@ function App() {
   
 
   return (
-    <div className="">
+    <div className="bg-olive">
       <div className="pt-10 wrapper">
-        <h1 className='font-bold text-primary'>Ficha nutricional</h1>
+        <h1 className='font-bold'>Ficha nutricional</h1>
       
         <form onSubmit={handleSubmit(onSubmit)}>
           <section className="grid gap-5 md:grid-cols-2">
-            <h2 className='py-5'>Datos personales</h2>
+            <h2>Datos personales</h2>
             <label >Nombre
-              <input {...register("nombre", { required: true })}/>
+              <input className='bottom-line' {...register("datos.nombre", { required: true })}/>
               {errors.nombre && <span>Ingresa tu nombre</span>}
             </label>
       
             <label>Apellido
-              <input {...register("apellido", { required: true })} />
+              <input className='bottom-line' {...register("datos.apellido", { required: true })} />
             </label>
             <label>Edad
-              <input type="number" {...register("age", { min: 18, max: 99 })} />
+              <input className='bottom-line' type="number" {...register("datos.edad", { min: 18, max: 99 })} />
             </label>
             <label>Email
-              <input
-                {...register("email", {
+              <input className='bottom-line'
+                {...register("datos.email", {
                   required: true,
                   pattern: {
                     value: /\S+@\S+\.\S+/,
@@ -63,15 +63,15 @@ function App() {
               />
                   {errors.email && <span role="alert">{errors.email.message}</span>}
                   </label>
-            <label>Telefono
-              <input {...register("telefono", { required: true })} />
+            <label>Teléfono
+              <input className='bottom-line' {...register("datos.telefono", { required: true })} />
             </label>
             <label>Altura
-            <input {...register("height")} />
+            <input className='bottom-line' {...register("datos.altura")} />
             </label>
       
             <label>Peso
-            <input {...register("weight")} />
+            <input className='bottom-line' {...register("datos.peso")} />
             </label>
       
       
@@ -81,185 +81,185 @@ function App() {
             <label className="flex items-center gap-4">
               <span>¿Consume suplementos?</span>
               <span>No</span>
-                <input className="radio__toggle" type="checkbox" {...register('suplementos')}/>
+                <input className="radio__toggle" type="checkbox" {...register('hc.suplementos')}/>
               <span>Si</span>
             </label>
             {
-              watch("suplementos") && (
+              watch("hc.suplementos") && (
                 <label className='w-full'>Especificar
-                  <input className='bottom-line' {...register('textosuplementos')} />
+                  <input className='bottom-line' {...register('hc.textosuplementos')} />
                 </label>)
             }
             
             <label className="flex items-center gap-4">
               <span>¿Realiza alguna dieta?</span>
               <span>No</span>
-                <input className="radio__toggle" type="checkbox" {...register('dieta')}/>
+                <input className="radio__toggle" type="checkbox" {...register('hc.dieta')}/>
               <span>Si</span>
             </label>
 
             {
-              watch("dieta") && (
+              watch("hc.dieta") && (
                 <label className='w-full'>Especificar
-                  <input className='bottom-line' {...register('textodieta')} />
+                  <input className='bottom-line' {...register('hc.textodieta')} />
                 </label>)
             }
 
             <label className="flex items-center gap-4">
               <span>¿Come fuera del hogar?</span>
               <span>No</span>
-                <input className="radio__toggle" type="checkbox" {...register('fuera')}/>
+                <input className="radio__toggle" type="checkbox" {...register('hc.fuera')}/>
               <span>Si</span>
             </label>
 
             {
-              watch("fuera") && (
+              watch("hc.fuera") && (
                 <label className='w-full'>Especificar
-                  <input className='bottom-line' {...register('textofuera')} />
+                  <input className='bottom-line' {...register('hc.textofuera')} />
                 </label>)
             }
 
             <label className="flex items-center gap-4">
               <span>¿Tiene alguna enfermedad metabólica de base?</span>
               <span>No</span>
-                <input className="radio__toggle" type="checkbox" {...register('metabolica')}/>
+                <input className="radio__toggle" type="checkbox" {...register('hc.metabolica')}/>
               <span>Si</span>
             </label>
 
             {
-              watch("metabolica") && (
+              watch("hc.metabolica") && (
                 <label className='w-full'>Especificar
-                  <input className='bottom-line' {...register('textometabolica')} />
+                  <input className='bottom-line' {...register('hc.textometabolica')} />
                 </label>)
             }
             <label className="flex items-center gap-4">
               <span>¿Alergias alimentarias?</span>
               <span>No</span>
-                <input className="radio__toggle" type="checkbox" {...register('alergias')}/>
+                <input className="radio__toggle" type="checkbox" {...register('hc.alergias')}/>
               <span>Si</span>
             </label>
 
             {
-              watch("alergias") && (
+              watch("hc.alergias") && (
                 <label className='w-full'>Especificar
-                  <input className='bottom-line' {...register('textoalergias')} />
+                  <input className='bottom-line' {...register('hc.textoalergias')} />
                 </label>)
             }
             <label className="flex items-center gap-4">
               <span>¿Intolerancia a la lactosa?</span>
               <span>No</span>
-                <input className="radio__toggle" type="checkbox" {...register('lactosa')}/>
+                <input className="radio__toggle" type="checkbox" {...register('hc.lactosa')}/>
               <span>Si</span>
             </label>
 
             {
-              watch("lactosa") && (
+              watch("hc.lactosa") && (
                 <label className='w-full'>Especificar
-                  <input className='bottom-line' {...register('textolactosa')} />
+                  <input className='bottom-line' {...register('hc.textolactosa')} />
                 </label>)
             }
             <label className="flex items-center gap-4">
               <span>¿Colon Irritable?</span>
               <span>No</span>
-                <input className="radio__toggle" type="checkbox" {...register('irritable')}/>
+                <input className="radio__toggle" type="checkbox" {...register('hc.irritable')}/>
               <span>Si</span>
             </label>
 
             {
-              watch("irritable") && (
+              watch("hc.irritable") && (
                 <label className='w-full'>Especificar
-                  <input className='bottom-line' {...register('textoirritable')} />
+                  <input className='bottom-line' {...register('hc.textoirritable')} />
                 </label>)
             }
             <label className="flex items-center gap-4">
               <span>¿Estreñimiento?</span>
               <span>No</span>
-                <input className="radio__toggle" type="checkbox" {...register('estrenimientos')}/>
+                <input className="radio__toggle" type="checkbox" {...register('hc.estrenimientos')}/>
               <span>Si</span>
             </label>
 
             {
-              watch("estrenimientos") && (
+              watch("hc.estrenimientos") && (
                 <label className='w-full'>Especificar
-                  <input className='bottom-line' {...register('textoestrenimientos')} />
+                  <input className='bottom-line' {...register('hc.textoestrenimientos')} />
                 </label>)
             }
             <label className="flex items-center gap-4">
               <span>¿Intolerancia alimentaria?</span>
               <span>No</span>
-                <input className="radio__toggle" type="checkbox" {...register('intolerancia')}/>
+                <input className="radio__toggle" type="checkbox" {...register('hc.intolerancia')}/>
               <span>Si</span>
             </label>
 
             {
-              watch("intolerancia") && (
+              watch("hc.intolerancia") && (
                 <label className='w-full'>Especificar
-                  <input className='bottom-line' {...register('textointolerancia')} />
+                  <input className='bottom-line' {...register('hc.textointolerancia')} />
                 </label>)
             }
             <label className="flex items-center gap-4">
-              <span>¿Alteraciones de la Vesícula Biliar?</span>
+              <span>¿Alteraciones de la vesícula biliar?</span>
               <span>No</span>
-                <input className="radio__toggle" type="checkbox" {...register('vesicula')}/>
+                <input className="radio__toggle" type="checkbox" {...register('hc.vesicula')}/>
               <span>Si</span>
             </label>
 
             {
-              watch("vesicula") && (
+              watch("hc.vesicula") && (
                 <label className='w-full'>Especificar
-                  <input className='bottom-line' {...register('textovesicula')} />
+                  <input className='bottom-line' {...register('hc.textovesicula')} />
                 </label>)
             }
             <label className="flex items-center gap-4">
               <span>¿Tiene o tuvo divertículos?</span>
               <span>No</span>
-                <input className="radio__toggle" type="checkbox" {...register('diverticulos')}/>
+                <input className="radio__toggle" type="checkbox" {...register('hc.diverticulos')}/>
               <span>Si</span>
             </label>
 
             {
-              watch("diverticulos") && (
+              watch("hc.diverticulos") && (
                 <label className='w-full'>Especificar
-                  <input className='bottom-line' {...register('textodiverticulos')} />
+                  <input className='bottom-line' {...register('hc.textodiverticulos')} />
                 </label>)
             }
             <label className="flex items-center gap-4">
-              <span>¿Enfermedad Renal?</span>
+              <span>¿Enfermedad renal?</span>
               <span>No</span>
-                <input className="radio__toggle" type="checkbox" {...register('renal')}/>
+                <input className="radio__toggle" type="checkbox" {...register('hc.renal')}/>
               <span>Si</span>
             </label>
 
             {
-              watch("renal") && (
+              watch("hc.renal") && (
                 <label className='w-full'>Especificar
-                  <input className='bottom-line' {...register('textorenal')} />
+                  <input className='bottom-line' {...register('hc.textorenal')} />
                 </label>)
             }
             <label className="flex items-center gap-4">
               <span>¿Toma medicación?</span>
               <span>No</span>
-                <input className="radio__toggle" onClick={()=>{showInput('medicacion')}} type="checkbox" {...register('medicacion')}/>
+                <input className="radio__toggle" onClick={()=>{showInput('medicacion')}} type="checkbox" {...register('hc.medicacion')}/>
               <span>Si</span>
             </label>
 
             {
-              watch("medicacion") && (
+              watch("hc.medicacion") && (
                 <label className='w-full'>¿Cuál?
-                  <input className='bottom-line' {...register('textomedicacion')} />
+                  <input className='bottom-line' {...register('hc.textomedicacion')} />
                 </label>)
             }
             <label className="flex items-center gap-4">
               <span>¿Toma anticonceptivos?</span>
               <span>No</span>
-                <input className="radio__toggle" onClick={()=>{showInput('anticonceptivos')}} type="checkbox" {...register('anticonceptivos')}/>
+                <input className="radio__toggle" onClick={()=>{showInput('anticonceptivos')}} type="checkbox" {...register('hc.anticonceptivos')}/>
               <span>Si</span>
             </label>
 
             {
-              watch("anticonceptivos") && (
+              watch("hc.anticonceptivos") && (
                 <label className='w-full'>Especificar
-                  <input className='bottom-line' {...register('textoanticonceptivos')} />
+                  <input className='bottom-line' {...register('hc.textoanticonceptivos')} />
                 </label>)
             }
           </section>
@@ -315,151 +315,294 @@ function App() {
               </div>
               <div className="py-6">
                 <h3>Lácteos</h3>
-                <label className='alimentos'>leche
-                  <input type="checkbox" {...register('leche')}/>
+                <input className="invisible inp-cbx" id="leche" type="checkbox" {...register('lacteos.leche')} />
+                <label className="cbx alimentos" htmlFor="leche"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>leche
                 </label>
-                <label className='alimentos'>yogurt
-                  <input type="checkbox" {...register('yogurt')}/>
+                <input className="invisible inp-cbx" id="yogurt" type="checkbox" {...register('lacteos.yogurt')} />
+                <label className="cbx alimentos" htmlFor="yogurt"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>yogurt
                 </label>
-                <label className='alimentos'>queso
-                  <input type="checkbox" {...register('queso')}/>
+                <input className="invisible inp-cbx" id="queso" type="checkbox" {...register('lacteos.queso')} />
+                <label className="cbx alimentos" htmlFor="queso"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>queso
                 </label>
-                <label className='alimentos'>huevos
-                  <input type="checkbox" {...register('huevos')}/>
+                <input className="invisible inp-cbx" id="huevos" type="checkbox" {...register('lacteos.huevos')} />
+                <label className="cbx alimentos" htmlFor="huevos"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>huevos
                 </label>
-                <label className='alimentos'>ricota
-                  <input type="checkbox" {...register('ricota')}/>
+                <input className="invisible inp-cbx" id="ricota" type="checkbox" {...register('lacteos.ricota')} />
+                <label className="cbx alimentos" htmlFor="ricota"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>ricota
                 </label>
+                
               </div>
               <div className="py-6">
                 <h3>Carnes</h3>
-                <label className='alimentos'>pollo
-                  <input type="checkbox" {...register('pollo')}/>
+                <input className="invisible inp-cbx" id="pollo" type="checkbox" {...register('carnes.pollo')} />
+                <label className="cbx alimentos" htmlFor="pollo"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>pollo
                 </label>
-                <label className='alimentos'>pescado
-                  <input type="checkbox" {...register('pescado')}/>
+                <input className="invisible inp-cbx" id="pescado" type="checkbox" {...register('carnes.pescado')} />
+                <label className="cbx alimentos" htmlFor="pescado"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>pescado
                 </label>
-                <label className='alimentos'>vaca
-                  <input type="checkbox" {...register('vaca')}/>
+                <input className="invisible inp-cbx" id="vaca" type="checkbox" {...register('carnes.vaca')} />
+                <label className="cbx alimentos" htmlFor="vaca"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>vaca
                 </label>
-                <label className='alimentos'>cerdo
-                  <input type="checkbox" {...register('cerdo')}/>
+                <input className="invisible inp-cbx" id="cerdo" type="checkbox" {...register('carnes.cerdo')} />
+                <label className="cbx alimentos" htmlFor="cerdo"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>cerdo
                 </label>
-              </div>
+                </div>
               <div className="py-6">
                 <h3>Pan y galletitas</h3>
-                <label className='alimentos'>pan blanco
-                  <input type="checkbox" {...register('panblanco')}/>
+                <input className="invisible inp-cbx" id="panblanco" type="checkbox" {...register('panes.panblanco')} />
+                <label className="cbx alimentos" htmlFor="panblanco"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>Pan Blanco
                 </label>
-                <label className='alimentos'>pan de salvado
-                  <input type="checkbox" {...register('pansalvado')}/>
+                <input className="invisible inp-cbx" id="pansalvado" type="checkbox" {...register('panes.pansalvado')} />
+                <label className="cbx alimentos" htmlFor="pansalvado"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>Pan de Salvado
                 </label>
-                <label className='alimentos'>galletitas de agua
-                  <input type="checkbox" {...register('galletitasagua')}/>
+                <input className="invisible inp-cbx" id="galletitasagua" type="checkbox" {...register('panes.galletitasagua')} />
+                <label className="cbx alimentos" htmlFor="galletitasagua"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>Galletitas de agua
                 </label>
-                <label className='alimentos'>galletitas sin sal
-                  <input type="checkbox" {...register('galletitassinsal')}/>
+                <input className="invisible inp-cbx" id="galletitassinsal" type="checkbox" {...register('panes.galletitassinsal')} />
+                <label className="cbx alimentos" htmlFor="galletitassinsal"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>Galletitas sin sal
                 </label>
-                <label className='alimentos'>galletitas dulces
-                  <input type="checkbox" {...register('galletitasdulces')}/>
+                <input className="invisible inp-cbx" id="galletitasdulces" type="checkbox" {...register('panes.galletitasdulces')} />
+                <label className="cbx alimentos" htmlFor="galletitasdulces"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>Galletitas dulces
                 </label>
-                <label className='alimentos'>galletitas de arroz
-                  <input type="checkbox" {...register('galletitasarroz')}/>
+                <input className="invisible inp-cbx" id="galletitasarroz" type="checkbox" {...register('panes.galletitasarroz')} />
+                <label className="cbx alimentos" htmlFor="galletitasarroz"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>Galletitas de arroz
                 </label>
               </div>
               <div className="py-6">
                   <h3>Semillas</h3>
-                  <label className='alimentos'>chia
-                    <input type="checkbox" {...register('chia')}/>
-                  </label>
-                  <label className='alimentos'>sesamo
-                    <input type="checkbox" {...register('sesamo')}/>
-                  </label>
-                  <label className='alimentos'>girasol
-                    <input type="checkbox" {...register('girasol')}/>
-                  </label>
-                  <label className='alimentos'>amaranto
-                    <input type="checkbox" {...register('amaranto')}/>
-                  </label>
-                  <label className='alimentos'>lino
-                    <input type="checkbox" {...register('lino')}/>
-                  </label>
-                  <label className='alimentos'>amapola
-                    <input type="checkbox" {...register('amapola')}/>
-                  </label>
+                  <input className="invisible inp-cbx" id="chia" type="checkbox" {...register('semillas.chia')} />
+                <label className="cbx alimentos" htmlFor="chia"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>chia
+                </label>
+                  <input className="invisible inp-cbx" id="sesamo" type="checkbox" {...register('semillas.sesamo')} />
+                <label className="cbx alimentos" htmlFor="sesamo"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>sesamo
+                </label>
+                  <input className="invisible inp-cbx" id="girasol" type="checkbox" {...register('semillas.girasol')} />
+                <label className="cbx alimentos" htmlFor="girasol"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>girasol
+                </label>
+                  <input className="invisible inp-cbx" id="amaranto" type="checkbox" {...register('semillas.amaranto')} />
+                <label className="cbx alimentos" htmlFor="amaranto"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>amaranto
+                </label>
+                  <input className="invisible inp-cbx" id="lino" type="checkbox" {...register('semillas.lino')} />
+                <label className="cbx alimentos" htmlFor="lino"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>lino
+                </label>
+                  <input className="invisible inp-cbx" id="amapola" type="checkbox" {...register('semillas.amapola')} />
+                <label className="cbx alimentos" htmlFor="amapola"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>amapola
+                </label>
+                  <input className="invisible inp-cbx" id="zapallo" type="checkbox" {...register('semillas.zapallo')} />
+                <label className="cbx alimentos" htmlFor="zapallo"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>zapallo
+                </label>
+                  <input className="invisible inp-cbx" id="otras" type="checkbox" {...register('semillas.otras')} />
+                <label className="cbx alimentos" htmlFor="otras"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>otras
+                </label>
               </div>
               <div className="py-6">
                 <h3>Frutas Secas</h3>
-                <label className='alimentos'>nuez
-                  <input type="checkbox" {...register('nuez')}/>
+                <input className="invisible inp-cbx" id="nuez" type="checkbox" {...register('frutossecos.nuez')} />
+                <label className="cbx alimentos" htmlFor="nuez"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>nuez
                 </label>
-                <label className='alimentos'>almendra
-                  <input type="checkbox" {...register('almendra')}/>
+                <input className="invisible inp-cbx" id="almendra" type="checkbox" {...register('frutossecos.almendra')} />
+                <label className="cbx alimentos" htmlFor="almendra"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>almendra
                 </label>
-                <label className='alimentos'>castaña de caju
-                  <input type="checkbox" {...register('castaniacaju')}/>
+                <input className="invisible inp-cbx" id="castania" type="checkbox" {...register('frutossecos.castania')} />
+                <label className="cbx alimentos" htmlFor="castania"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>castania
                 </label>
-                <label className='alimentos'>pistacho
-                  <input type="checkbox" {...register('pistacho')}/>
+                <input className="invisible inp-cbx" id="pistacho" type="checkbox" {...register('frutossecos.pistacho')} />
+                <label className="cbx alimentos" htmlFor="pistacho"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>pistacho
                 </label>
-                <label className='alimentos'>avellana
-                  <input type="checkbox" {...register('avellana')}/>
+                <input className="invisible inp-cbx" id="avellana" type="checkbox" {...register('frutossecos.avellana')} />
+                <label className="cbx alimentos" htmlFor="avellana"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>avellana
                 </label>
-                <label className='alimentos'>pasas de uva
-                  <input type="checkbox" {...register('pasasuva')}/>
+                <input className="invisible inp-cbx" id="pasasuva" type="checkbox" {...register('frutossecos.pasasuva')} />
+                <label className="cbx alimentos" htmlFor="pasasuva"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>pasasuva
                 </label>
-                <label className='alimentos'>pasas arandano
-                  <input type="checkbox" {...register('pasasarandano')}/>
+                <input className="invisible inp-cbx" id="pasasarandano" type="checkbox" {...register('frutossecos.pasasarandano')} />
+                <label className="cbx alimentos" htmlFor="pasasarandano"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>pasasarandano
                 </label>
-                <label className='alimentos'>banana chips
-                  <input type="checkbox" {...register('bananachips')}/>
+                <input className="invisible inp-cbx" id="bananachips" type="checkbox" {...register('frutossecos.bananachips')} />
+                <label className="cbx alimentos" htmlFor="bananachips"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>bananachips
                 </label>
-                <label className='alimentos'>jengibre chips
-                  <input type="checkbox" {...register('jengibrechips')}/>
+                <input className="invisible inp-cbx" id="jengibrechips" type="checkbox" {...register('frutossecos.jengibrechips')} />
+                <label className="cbx alimentos" htmlFor="jengibrechips"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>jengibrechips
                 </label>
-                <label className='alimentos'>mani
-                  <input type="checkbox" {...register('mani')}/>
+                <input className="invisible inp-cbx" id="mani" type="checkbox" {...register('frutossecos.mani')} />
+                <label className="cbx alimentos" htmlFor="mani"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>mani
                 </label>
-                <label className='alimentos'>otros
-                  <input type="checkbox" {...register('otrossecos')}/>
+                <input className="invisible inp-cbx" id="otros" type="checkbox" {...register('frutossecos.otros')} />
+                <label className="cbx alimentos" htmlFor="otros"><span>
+                    <svg width="12px" height="9px" viewBox="0 0 12 9">
+                      <polyline points="1 5 4 8 11 1"></polyline>
+                    </svg>
+                  </span>otros
                 </label>
               </div>
               <div className="py-6">
                 <h3>Legumbres / Derivados</h3>
                 <input className="invisible inp-cbx" id="soja" type="checkbox" {...register('legumbres.soja')} />
-                <label className="cbx alimentos" htmlFor="soja">soja<span>
+                <label className="cbx alimentos" htmlFor="soja"><span>
                     <svg width="12px" height="9px" viewBox="0 0 12 9">
                       <polyline points="1 5 4 8 11 1"></polyline>
                     </svg>
-                  </span>
+                  </span>soja
                 </label>
                 <input className="invisible inp-cbx" id="lentejas" type="checkbox" {...register('legumbres.lentejas')} />
-                <label className="cbx alimentos" htmlFor="lentejas">lentejas<span>
+                <label className="cbx alimentos" htmlFor="lentejas"><span>
                     <svg width="12px" height="9px" viewBox="0 0 12 9">
                       <polyline points="1 5 4 8 11 1"></polyline>
                     </svg>
-                  </span>
+                  </span>lentejas
                 </label>
                 <input className="invisible inp-cbx" id="garbanzos" type="checkbox" {...register('legumbres.garbanzos')} />
-                <label className="cbx alimentos" htmlFor="garbanzos">garbanzos<span>
+                <label className="cbx alimentos" htmlFor="garbanzos"><span>
                     <svg width="12px" height="9px" viewBox="0 0 12 9">
                       <polyline points="1 5 4 8 11 1"></polyline>
                     </svg>
-                  </span>
+                  </span>garbanzos
                 </label>
                 <input className="invisible inp-cbx" id="porotos" type="checkbox" {...register('legumbres.porotos')} />
-                <label className="cbx alimentos" htmlFor="porotos">porotos<span>
+                <label className="cbx alimentos" htmlFor="porotos"><span>
                     <svg width="12px" height="9px" viewBox="0 0 12 9">
                       <polyline points="1 5 4 8 11 1"></polyline>
                     </svg>
-                  </span>
+                  </span>porotos
                 </label>
                 <input className="invisible inp-cbx" id="otros" type="checkbox" {...register('legumbres.otros')} />
-                <label className="cbx alimentos" htmlFor="otros">otros<span>
+                <label className="cbx alimentos" htmlFor="otros"><span>
                     <svg width="12px" height="9px" viewBox="0 0 12 9">
                       <polyline points="1 5 4 8 11 1"></polyline>
                     </svg>
-                  </span>
+                  </span>otros
                 </label>
               </div>
             </div>
@@ -469,10 +612,10 @@ function App() {
               <input className='bottom-line' {...register('comentariosalimentos')} />
             </label>
           </section>
-          <section className="grid gap-5">
+          <section>
             <h2>Verduras</h2>
             <p className="text-gray-500">por favor tachar aquellas que NO consuma.</p>
-            <ul className="lista">
+            <ul className="grid gap-5 py-5 lista">
               <li><input type="checkbox" id="acelga" {...register('verduras.acelga')} value="acelga"/><label htmlFor="acelga">acelga</label></li>
               <li><input type="checkbox" id="achicoria" {...register('verduras.achicoria')} value="achicoria"/><label htmlFor="achicoria">achicoria</label></li>
               <li><input type="checkbox" id="apio" {...register('verduras.apio')} value="apio"/><label htmlFor="apio">apio</label></li>
@@ -519,10 +662,10 @@ function App() {
             </ul>
 
           </section>
-          <section className="grid gap-5">
+          <section>
             <h2>Frutas</h2>
             <p className="text-gray-500">por favor tachar aquellas que NO consuma.</p>
-            <ul className="lista frutas">
+            <ul className="grid gap-5 py-5 lista frutas">
               <li><input type="checkbox" id="frutillas" {...register('frutas.frutillas')} value="frutillas"/><label htmlFor="frutillas">frutillas</label></li>
               <li><input type="checkbox" id="guinda" {...register('frutas.guinda')} value="guinda"/><label htmlFor="guinda">guinda</label></li>
               <li><input type="checkbox" id="limon" {...register('frutas.limon')} value="limon"/><label htmlFor="limon">limon</label></li>
@@ -545,55 +688,110 @@ function App() {
               <li><input type="checkbox" id="mamon" {...register('frutas.mamon')} value="mamon"/><label htmlFor="mamon">mamon</label></li>
              
             </ul>
-
+          </section>
+          {/* Recordatorio 24hs */}
+          <section>
+            <h2>Recodatorio 24hs</h2>
+            <p className='text-gray-500'>¿Que comio ayer?</p>
+            <div className="flex items-center justify-between py-5">
+              <h3>Desayuno</h3>
+              <label className='flex items-center gap-4'>Hora:
+                  <input className='w-20'{...register('dieta.desayunohora')} />
+              </label>
+            </div>
+            <input className='bottom-line' {...register('dieta.desayuno')} />
+            <div className="flex items-center justify-between py-5">
+              <h3>colacion</h3>
+              <label className='flex items-center gap-4'>Hora:
+                  <input className='w-20'{...register('dieta.colacionhora')} />
+              </label>
+            </div>
+            <input className='bottom-line' {...register('dieta.colacion')} />
+            <div className="flex items-center justify-between py-5">
+              <h3>almuerzo</h3>
+              <label className='flex items-center gap-4'>Hora:
+                  <input className='w-20'{...register('dieta.almuerzohora')} />
+              </label>
+            </div>
+            <input className='bottom-line' {...register('dieta.almuerzo')} />
+            <div className="flex items-center justify-between py-5">
+              <h3>merienda</h3>
+              <label className='flex items-center gap-4'>Hora:
+                  <input className='w-20'{...register('dieta.meriendahora')} />
+              </label>
+            </div>
+            <input className='bottom-line' {...register('dieta.merienda')} />
+            <div className="flex items-center justify-between py-5">
+              <h3>colacion</h3>
+              <label className='flex items-center gap-4'>Hora:
+                  <input className='w-20'{...register('dieta.colaciondoshora')} />
+              </label>
+            </div>
+            <input className='bottom-line' {...register('dieta.colaciondos')} />
+            <div className="flex items-center justify-between py-5">
+              <h3>cena</h3>
+              <label className='flex items-center gap-4'>Hora:
+                  <input className='w-20'{...register('dieta.cenahora')} />
+              </label>
+            </div>
+            <input className='bottom-line' {...register('dieta.cena')} />
+            <div className="flex items-center justify-between py-5">
+              <h3>otras</h3>
+              <label className='flex items-center gap-4'>Hora:
+                  <input className='w-20'{...register('dieta.otrashora')} />
+              </label>
+            </div>
+            <input className='bottom-line' {...register('dieta.otras')} />
           </section>
           <section>
           <h2>Actividad fisica</h2>
-            <label className='w-full'>Tipo de actividad física
-              <input className='bottom-line' {...register('actividad.tipo')} />
-            </label>
-            <label className='w-full'>Horas de entrenamiento
-              <input className='bottom-line' {...register('actividad.tiempo')} />
-            </label>
-            <label className="flex items-center gap-4">
-              <span>¿Come algo antes de entrenar?</span>
-              <span>No</span>
-                <input className="radio__toggle" type="checkbox" {...register('actividad.comidaantes')}/>
-              <span>Si</span>
-            </label>
-            {
-              watch("actividad.comidaantes") && (
-                <label className='w-full'>¿Qué?
-                  <input className='bottom-line' {...register('activida.quecomeantes')} />
-                </label>)
-            }
-            <label className="flex items-center gap-4">
-              <span>¿Come algo despues de entrenar?</span>
-              <span>No</span>
-                <input className="radio__toggle" type="checkbox" {...register('actividad.comidadespues')}/>
-              <span>Si</span>
-            </label>
-            {
-              watch("actividad.comidadespues") && (
-                <label className='w-full'>¿Qué?
-                  <input className='bottom-line' {...register('activida.quecomedespues')} />
-                </label>)
-            }
-            <label className='w-full'>¿Qué bebidas utiliza durante el entrenamiento?
-              <input className='bottom-line' {...register('actividad.bebidas')} />
-            </label>
-            <label className='w-full'>¿Cual es tu comida favorita?
-              <input className='bottom-line' {...register('comidafavorita')} />
-            </label>
-            <label className='w-full'>¿Cual es el motivo de la consulta?
-              <input className='bottom-line' {...register('comidafavorita')} />
-            </label>
-            <label className='w-full'>¿Como me conociste?
-              <input className='bottom-line' {...register('comidafavorita')} />
-            </label>
+            <div className="grid gap-4 py-5">
+              <label className='w-full'>Tipo de actividad física
+                <input className='bottom-line' {...register('actividad.tipo')} />
+              </label>
+              <label className='w-full'>Horas de entrenamiento
+                <input className='bottom-line' {...register('actividad.tiempo')} />
+              </label>
+              <label className="flex items-center gap-4 py-4">
+                <span>¿Come algo antes de entrenar?</span>
+                <span>No</span>
+                  <input className="radio__toggle" type="checkbox" {...register('actividad.comidaantes')}/>
+                <span>Si</span>
+              </label>
+              {
+                watch("actividad.comidaantes") && (
+                  <label className='w-full'>¿Qué?
+                    <input className='bottom-line' {...register('activida.quecomeantes')} />
+                  </label>)
+              }
+              <label className="flex items-center gap-4 py-4">
+                <span>¿Come algo despues de entrenar?</span>
+                <span>No</span>
+                  <input className="radio__toggle" type="checkbox" {...register('actividad.comidadespues')}/>
+                <span>Si</span>
+              </label>
+              {
+                watch("actividad.comidadespues") && (
+                  <label className='w-full'>¿Qué?
+                    <input className='bottom-line' {...register('activida.quecomedespues')} />
+                  </label>)
+              }
+              <label className='w-full pt-5'>¿Qué bebidas utiliza durante el entrenamiento?
+                <input className='bottom-line' {...register('actividad.bebidas')} />
+              </label>
+              <label className='w-full'>¿Cual es tu comida favorita?
+                <input className='bottom-line' {...register('comidafavorita')} />
+              </label>
+              <label className='w-full'>¿Cual es el motivo de la consulta?
+                <input className='bottom-line' {...register('comidafavorita')} />
+              </label>
+              <label className='w-full'>¿Como me conociste?
+                <input className='bottom-line' {...register('comidafavorita')} />
+              </label>
+            </div>
 
           </section>
-          <input type="submit" className='block mt-10 text-white bg-primary'/>
+          <input type="submit"/>
         </form>
       </div>
     </div>

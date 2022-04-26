@@ -16,7 +16,7 @@ module.exports = {
       'green': '#D3D91E',
       'olive': '#BFB521',
       'accent': '#848C49',
-      'neutral': '#F2F2F2',
+      'neutral': '#fafafa',
     },
     extend: {},
   },
