@@ -37,8 +37,8 @@ function App() {
         <h1 className='font-bold text-primary'>Ficha nutricional</h1>
       
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h3 className='py-5 text-secondary'>Datos personales</h3>
           <section className="grid gap-5 md:grid-cols-2">
+            <h2 className='py-5'>Datos personales</h2>
             <label >Nombre
               <input {...register("nombre", { required: true })}/>
               {errors.nombre && <span>Ingresa tu nombre</span>}
@@ -77,6 +77,7 @@ function App() {
       
           </section>
           <section className='grid gap-8'>
+            <h2>Historia Clínica</h2>
             <label className="flex items-center gap-4">
               <span>¿Consume suplementos?</span>
               <span>No</span>
@@ -263,11 +264,11 @@ function App() {
             }
           </section>
           <section className="">
-
-            <h3>A continuacion deberá marcar todo aquello que consume y que no le molestaria que forme parte de su plan de alimentación</h3>
+            <h2>Alimentos</h2>
+            <p className='text-gray-500'>A continuacion deberá marcar todo aquello que consume y que no le molestaria que forme parte de su plan de alimentación</p>
             <div className="grid gap-2 md:grid-cols-2">
               <div className="py-6">
-                <h2>Infusiones</h2>
+                <h3>Infusiones</h3>
                 <input className="invisible inp-cbx" id="te" type="checkbox" {...register('legumbres.te')} />
                 <label className="cbx alimentos" htmlFor="te"><span>
                     <svg width="12px" height="9px" viewBox="0 0 12 9">
@@ -313,7 +314,7 @@ function App() {
                
               </div>
               <div className="py-6">
-                <h2>Lácteos</h2>
+                <h3>Lácteos</h3>
                 <label className='alimentos'>leche
                   <input type="checkbox" {...register('leche')}/>
                 </label>
@@ -331,7 +332,7 @@ function App() {
                 </label>
               </div>
               <div className="py-6">
-                <h2>Carnes</h2>
+                <h3>Carnes</h3>
                 <label className='alimentos'>pollo
                   <input type="checkbox" {...register('pollo')}/>
                 </label>
@@ -346,7 +347,7 @@ function App() {
                 </label>
               </div>
               <div className="py-6">
-                <h2>Pan y galletitas</h2>
+                <h3>Pan y galletitas</h3>
                 <label className='alimentos'>pan blanco
                   <input type="checkbox" {...register('panblanco')}/>
                 </label>
@@ -367,7 +368,7 @@ function App() {
                 </label>
               </div>
               <div className="py-6">
-                  <h2>Semillas</h2>
+                  <h3>Semillas</h3>
                   <label className='alimentos'>chia
                     <input type="checkbox" {...register('chia')}/>
                   </label>
@@ -388,7 +389,7 @@ function App() {
                   </label>
               </div>
               <div className="py-6">
-                <h2>Frutas Secas</h2>
+                <h3>Frutas Secas</h3>
                 <label className='alimentos'>nuez
                   <input type="checkbox" {...register('nuez')}/>
                 </label>
@@ -424,7 +425,7 @@ function App() {
                 </label>
               </div>
               <div className="py-6">
-                <h2>Legumbres / Derivados</h2>
+                <h3>Legumbres / Derivados</h3>
                 <input className="invisible inp-cbx" id="soja" type="checkbox" {...register('legumbres.soja')} />
                 <label className="cbx alimentos" htmlFor="soja">soja<span>
                     <svg width="12px" height="9px" viewBox="0 0 12 9">
@@ -469,7 +470,8 @@ function App() {
             </label>
           </section>
           <section className="grid gap-5">
-            <h3>Verduras: por favor tachar aquellas que NO consuma.</h3>
+            <h2>Verduras</h2>
+            <p className="text-gray-500">por favor tachar aquellas que NO consuma.</p>
             <ul className="lista">
               <li><input type="checkbox" id="acelga" {...register('verduras.acelga')} value="acelga"/><label htmlFor="acelga">acelga</label></li>
               <li><input type="checkbox" id="achicoria" {...register('verduras.achicoria')} value="achicoria"/><label htmlFor="achicoria">achicoria</label></li>
@@ -518,7 +520,8 @@ function App() {
 
           </section>
           <section className="grid gap-5">
-            <h3>Frutas: por favor tachar aquellas que NO consuma.</h3>
+            <h2>Frutas</h2>
+            <p className="text-gray-500">por favor tachar aquellas que NO consuma.</p>
             <ul className="lista frutas">
               <li><input type="checkbox" id="frutillas" {...register('frutas.frutillas')} value="frutillas"/><label htmlFor="frutillas">frutillas</label></li>
               <li><input type="checkbox" id="guinda" {...register('frutas.guinda')} value="guinda"/><label htmlFor="guinda">guinda</label></li>
@@ -544,7 +547,53 @@ function App() {
             </ul>
 
           </section>
-          <input type="submit" className='block mt-10 text-white bg-accent'/>
+          <section>
+          <h2>Actividad fisica</h2>
+            <label className='w-full'>Tipo de actividad física
+              <input className='bottom-line' {...register('actividad.tipo')} />
+            </label>
+            <label className='w-full'>Horas de entrenamiento
+              <input className='bottom-line' {...register('actividad.tiempo')} />
+            </label>
+            <label className="flex items-center gap-4">
+              <span>¿Come algo antes de entrenar?</span>
+              <span>No</span>
+                <input className="radio__toggle" type="checkbox" {...register('actividad.comidaantes')}/>
+              <span>Si</span>
+            </label>
+            {
+              watch("actividad.comidaantes") && (
+                <label className='w-full'>¿Qué?
+                  <input className='bottom-line' {...register('activida.quecomeantes')} />
+                </label>)
+            }
+            <label className="flex items-center gap-4">
+              <span>¿Come algo despues de entrenar?</span>
+              <span>No</span>
+                <input className="radio__toggle" type="checkbox" {...register('actividad.comidadespues')}/>
+              <span>Si</span>
+            </label>
+            {
+              watch("actividad.comidadespues") && (
+                <label className='w-full'>¿Qué?
+                  <input className='bottom-line' {...register('activida.quecomedespues')} />
+                </label>)
+            }
+            <label className='w-full'>¿Qué bebidas utiliza durante el entrenamiento?
+              <input className='bottom-line' {...register('actividad.bebidas')} />
+            </label>
+            <label className='w-full'>¿Cual es tu comida favorita?
+              <input className='bottom-line' {...register('comidafavorita')} />
+            </label>
+            <label className='w-full'>¿Cual es el motivo de la consulta?
+              <input className='bottom-line' {...register('comidafavorita')} />
+            </label>
+            <label className='w-full'>¿Como me conociste?
+              <input className='bottom-line' {...register('comidafavorita')} />
+            </label>
+
+          </section>
+          <input type="submit" className='block mt-10 text-white bg-primary'/>
         </form>
       </div>
     </div>
