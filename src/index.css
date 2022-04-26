@@ -6,6 +6,10 @@
   @apply px-6 mx-auto md:max-w-2xl lg:max-w-3xl;
 }
 
+.bottom-line{
+  @apply border-0 border-b-2 border-dotted;
+}
+
 @layer base {
   h1 {
     @apply text-2xl;

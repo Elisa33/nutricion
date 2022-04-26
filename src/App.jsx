@@ -15,7 +15,7 @@ function App() {
   const onSubmit = data => console.log(data);
 
  // console.log(watch("example"));
- const [textInput, setTextInput] = useState(false)
+ const [textInput, setTextInput] = useState([])
 
   useEffect(()=>{
     const obtenerDatos = async ()=>{
@@ -30,10 +30,13 @@ function App() {
     obtenerDatos();
   },[])
 
+  const haysuple = textInput.find(element => element === 'suplementos')
+  console.log(haysuple)
+  
+
   /* Toogle checked */
-  const showInput = (question) =>{
-    setTextInput(true)
-    console.log(question)
+  function showInput(question){
+    setTextInput([...textInput, question])
   }
 
   
@@ -83,21 +86,35 @@ function App() {
       
       
           </div>
-          <section className='py-12'>
+          <section className='grid gap-5 py-12'>
             <label className="flex items-center gap-4">
               <span>
               Consume suplementos?
               </span>
-              <input className="radio__toggle" onChange={()=>{showInput('suplementos')}} type="checkbox" {...register('suplementos')}/>
+              <span>No</span>
+              <input className="radio__toggle" onClick={()=>{showInput('suplementos')}} type="checkbox" {...register('suplementos')}/>
+              <span>Si</span>
             </label>
+            
             {
-              textInput ?
-              (
-            <label>Especificar
-              <input {...register("suplementos")} />
+              textInput.find(element => element === 'suplementos') && (
+                <label className='w-full pb-6'>Especificar
+                  <input className='bottom-line' {...register('textosuplementos')} />
+                </label>
+              )
+            }
+            <label className="flex items-center gap-4">
+              <span>
+              Realiza alguna dieta?
+              </span>
+              <input className="radio__toggle" onClick={()=>{showInput('dieta')}} type="checkbox" {...register('dieta')}/>
             </label>
-              ):(
-                <div></div>
+            
+            {
+              textInput.find(element => element === 'dieta') && (
+                <label className=''>Especificar
+                  <input className='bottom-line'{...register('textodieta')} />
+                </label>
               )
             }
           </section>
