@@ -8,8 +8,7 @@ input[type="number"]
 
 .radio__toggle {
     position: relative;
-    min-width: 70px;
-    max-width: 70px;
+    width: 70px;
     height: 32px;
     margin: 0;
     vertical-align: top;
@@ -20,72 +19,34 @@ input[type="number"]
     transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
     border: 2px solid #D6D9E0;
     box-sizing: border-box;
-    border-radius: 30px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-.toggle-red {
-    position: relative;
-    min-width: 70px;
-    max-width: 70px;
-    height: 32px;
-    margin: 0;
-    vertical-align: top;
-    outline: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
-    border: 2px solid #D6D9E0;
-    box-sizing: border-box;
-    border-radius: 30px;
     cursor: pointer;
     display: flex;
     align-items: center;
     cursor: pointer;
 }
 
+
 .radio__toggle::after {
     content: "";
     position: absolute;
-    left: 2px;
+    left: 1px;
+    top:1px;
     width: 30px;
     height: 30px;
-    background-color: light-green;
+    background-color: #F24141;
     border-radius: 50%;
-    transform: translateX(0);
-    transition: all 0.5s cubic-bezier(0.2, 0.85, 0.32, 1.2);
-}
-.toggle-red::after {
-    content: "";
-    position: absolute;
-    left: 2px;
-    width: 30px;
-    height: 30px;
-    background-color: red;
-    border-radius: 50%;
-    transform: translateX(0);
+    transform: translateX(0px);
     transition: all 0.5s cubic-bezier(0.2, 0.85, 0.32, 1.2);
 }
 
 
 .radio__toggle:checked::after {
-    /* transform: translateX(30px); */
-    left: initial;
-    background-color: lightgreen;
-}
-
-.radio__toggle:checked + .radio__span {
-    color: #000;
-}
-.toggle-red:checked::after {
     transform: translateX(30px);
     left: initial;
-    background-color: red;
+    background-color: #F24141;
 }
 
-.toggle-red:checked + .radio__span {
-    color: #000;
+input:focus-visible{
+    outline: none;
 }
+

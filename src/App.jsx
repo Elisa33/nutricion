@@ -7,11 +7,15 @@ import { db } from './firebase'
 function App() {
   
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm({
+    defaultValues: {
+      checkbox: false,
+    }
+  });
   const onSubmit = data => console.log(data);
 
  // console.log(watch("example"));
- const [on, setOn] = useState(false)
+ const [textInput, setTextInput] = useState(false)
 
   useEffect(()=>{
     const obtenerDatos = async ()=>{
@@ -27,69 +31,84 @@ function App() {
   },[])
 
   /* Toogle checked */
-  const cambioBolita = () =>{
-    setOn(true)
+  const showInput = (question) =>{
+    setTextInput(true)
+    console.log(question)
   }
 
   
 
   return (
-    <div className="mt-10 wrapper">
-      <h1 className='text-2xl'>Ficha nutricional</h1>
-
+    <div className="">
+      <div className="pt-10 wrapper">
+        <h1 className='text-4xl font-bold text-primary'>Ficha nutricional</h1>
       
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <h3 className='py-5 text-blue-500'>Datos personales</h3>
-        <div className="grid gap-5 md:grid-cols-2">
-          <label >Nombre
-            <input {...register("nombre", { required: true })}/>
-            {errors.nombre && <span>This field is required</span>}
-          </label>
-          
-          <label>Apellido
-            <input {...register("apellido", { required: true })} />
-          </label>
-          <label>Edad
-            <input type="number" {...register("age", { min: 18, max: 99 })} />
-          </label>
-          <label>Email
-            <input
-              {...register("email", {
-                required: true,
-                pattern: {
-                  value: /\S+@\S+\.\S+/,
-                  message: "Entered value does not match email format"
-                }
-              })}
-              type="email"
-            />
-                {errors.email && <span role="alert">{errors.email.message}</span>}
-                </label>
-          <label>Telefono
-            <input {...register("apellido", { required: true })} />
-          </label>
-          <label>Altura
-          <input type="number" {...register("height", { min: 1.00, max: 3.00 })} />
-          </label>
-          
-          <label>Peso
-          <input type="number" {...register("weight")} />
-          </label>
-          
-            <label>Frutas
-              <input type="checkbox" />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <h3 className='py-5 text-secondary'>Datos personales</h3>
+          <div className="grid gap-5 md:grid-cols-2">
+            <label >Nombre
+              <input {...register("nombre", { required: true })}/>
+              {errors.nombre && <span>This field is required</span>}
             </label>
-        </div>
-        
-        <label class="flex gap-4 items-center" for="radio__toggle2">
-          <span>
-          Consume suplementos?
-          </span>
-          <input class={ on ? 'toggle-red' : "radio__toggle"} onChange={cambioBolita} type="checkbox" checked/>
-  </label>
-
-        <input type="submit" className='block bg-lime-300'/>
-      </form>
+      
+            <label>Apellido
+              <input {...register("apellido", { required: true })} />
+            </label>
+            <label>Edad
+              <input type="number" {...register("age", { min: 18, max: 99 })} />
+            </label>
+            <label>Email
+              <input
+                {...register("email", {
+                  required: true,
+                  pattern: {
+                    value: /\S+@\S+\.\S+/,
+                    message: "Entered value does not match email format"
+                  }
+                })}
+                type="email"
+              />
+                  {errors.email && <span role="alert">{errors.email.message}</span>}
+                  </label>
+            <label>Telefono
+              <input {...register("apellido", { required: true })} />
+            </label>
+            <label>Altura
+            <input type="number" {...register("height")} />
+            </label>
+      
+            <label>Peso
+            <input type="number" {...register("weight")} />
+            </label>
+      
+      
+          </div>
+          <section className='py-12'>
+            <label className="flex items-center gap-4">
+              <span>
+              Consume suplementos?
+              </span>
+              <input className="radio__toggle" onChange={()=>{showInput('suplementos')}} type="checkbox" {...register('suplementos')}/>
+            </label>
+            {
+              textInput ?
+              (
+            <label>Especificar
+              <input {...register("suplementos")} />
+            </label>
+              ):(
+                <div></div>
+              )
+            }
+          </section>
+      
+      
+        <label>Kiwi
+                <input type="checkbox" {...register('kiwi')}/>
+              </label>
+          <input type="submit" className='block mt-10 text-white bg-accent'/>
+        </form>
+      </div>
     </div>
   )
 }
