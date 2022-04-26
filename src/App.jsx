@@ -81,11 +81,11 @@ function App() {
             </label>
         </div>
         
-        <label class="radio" for="radio__toggle2">
-    <input class='radio__toogle' onChange={cambioBolita} type="checkbox" checked/>
-    <span>
-     Consume suplementos?
-    </span>
+        <label class="flex gap-4 items-center" for="radio__toggle2">
+          <span>
+          Consume suplementos?
+          </span>
+          <input class={ on ? 'toggle-red' : "radio__toggle"} onChange={cambioBolita} type="checkbox" checked/>
   </label>
 
         <input type="submit" className='block bg-lime-300'/>
