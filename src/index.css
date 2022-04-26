@@ -19,13 +19,13 @@
 
 @layer base {
   h1 {
-    @apply text-2xl;
+    @apply text-5xl text-accent;
   }
   h2 {
-    @apply text-xl text-olive;
+    @apply text-3xl text-olive;
   }
   h3{
-    @apply text-lg text-olive;
+    @apply text-xl text-olive;
   }
   input{
     @apply block p-2 border border-gray-300 rounded focus:outline-none focus:border-olive;
@@ -41,5 +41,8 @@
   }
   label{
     @apply text-gray-500
+  }
+  section{
+    @apply py-14
   }
 }
