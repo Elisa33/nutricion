@@ -32,7 +32,7 @@ function App() {
   
 
   return (
-    <div className="bg-olive">
+    <div className="bg-green">
       <div className="pt-10 wrapper">
         <h1 className='font-bold'>Ficha nutricional</h1>
       
@@ -50,6 +50,12 @@ function App() {
             <label>Edad
               <input className='bottom-line' type="number" {...register("datos.edad", { min: 18, max: 99 })} />
             </label>
+            <label>Altura
+            <input className='bottom-line' {...register("datos.altura")} />
+            </label>
+            <label>Peso
+            <input className='bottom-line' {...register("datos.peso")} />
+            </label>
             <label>Email
               <input className='bottom-line'
                 {...register("datos.email", {
@@ -66,15 +72,6 @@ function App() {
             <label>Teléfono
               <input className='bottom-line' {...register("datos.telefono", { required: true })} />
             </label>
-            <label>Altura
-            <input className='bottom-line' {...register("datos.altura")} />
-            </label>
-      
-            <label>Peso
-            <input className='bottom-line' {...register("datos.peso")} />
-            </label>
-      
-      
           </section>
           <section className='grid gap-8'>
             <h2>Historia Clínica</h2>
@@ -269,7 +266,7 @@ function App() {
             <div className="grid gap-2 md:grid-cols-2">
               <div className="py-6">
                 <h3>Infusiones</h3>
-                <input className="invisible inp-cbx" id="te" type="checkbox" {...register('legumbres.te')} />
+                <input className="invisible inp-cbx" id="te" type="checkbox" {...register('infusiones.te')} />
                 <label className="cbx alimentos" htmlFor="te"><span>
                     <svg width="12px" height="9px" viewBox="0 0 12 9">
                       <polyline points="1 5 4 8 11 1"></polyline>
@@ -304,8 +301,8 @@ function App() {
                     </svg>
                   </span>malta
                 </label>
-                <input className="invisible inp-cbx" id="otros" type="checkbox" {...register('infusiones.otros')} />
-                <label className="cbx alimentos" htmlFor="otros"><span>
+                <input className="invisible inp-cbx" id="infsotros" type="checkbox" {...register('infusiones.otros')} />
+                <label className="cbx alimentos" htmlFor="infsotros"><span>
                     <svg width="12px" height="9px" viewBox="0 0 12 9">
                       <polyline points="1 5 4 8 11 1"></polyline>
                     </svg>
@@ -529,28 +526,28 @@ function App() {
                     <svg width="12px" height="9px" viewBox="0 0 12 9">
                       <polyline points="1 5 4 8 11 1"></polyline>
                     </svg>
-                  </span>pasasuva
+                  </span>pasas uva
                 </label>
                 <input className="invisible inp-cbx" id="pasasarandano" type="checkbox" {...register('frutossecos.pasasarandano')} />
                 <label className="cbx alimentos" htmlFor="pasasarandano"><span>
                     <svg width="12px" height="9px" viewBox="0 0 12 9">
                       <polyline points="1 5 4 8 11 1"></polyline>
                     </svg>
-                  </span>pasasarandano
+                  </span>pasas arandano
                 </label>
                 <input className="invisible inp-cbx" id="bananachips" type="checkbox" {...register('frutossecos.bananachips')} />
                 <label className="cbx alimentos" htmlFor="bananachips"><span>
                     <svg width="12px" height="9px" viewBox="0 0 12 9">
                       <polyline points="1 5 4 8 11 1"></polyline>
                     </svg>
-                  </span>bananachips
+                  </span>banana chips
                 </label>
                 <input className="invisible inp-cbx" id="jengibrechips" type="checkbox" {...register('frutossecos.jengibrechips')} />
                 <label className="cbx alimentos" htmlFor="jengibrechips"><span>
                     <svg width="12px" height="9px" viewBox="0 0 12 9">
                       <polyline points="1 5 4 8 11 1"></polyline>
                     </svg>
-                  </span>jengibrechips
+                  </span>jengibre chips
                 </label>
                 <input className="invisible inp-cbx" id="mani" type="checkbox" {...register('frutossecos.mani')} />
                 <label className="cbx alimentos" htmlFor="mani"><span>
@@ -559,8 +556,8 @@ function App() {
                     </svg>
                   </span>mani
                 </label>
-                <input className="invisible inp-cbx" id="otros" type="checkbox" {...register('frutossecos.otros')} />
-                <label className="cbx alimentos" htmlFor="otros"><span>
+                <input className="invisible inp-cbx" id="fsotros" type="checkbox" {...register('frutossecos.otros')} />
+                <label className="cbx alimentos" htmlFor="fsotros"><span>
                     <svg width="12px" height="9px" viewBox="0 0 12 9">
                       <polyline points="1 5 4 8 11 1"></polyline>
                     </svg>
@@ -616,49 +613,50 @@ function App() {
             <h2>Verduras</h2>
             <p className="text-gray-500">por favor tachar aquellas que NO consuma.</p>
             <ul className="grid gap-5 py-5 lista">
+              <li><input type="checkbox" id="albahaca" {...register('verduras.albahaca')} value="albahaca"/><label htmlFor="albahaca">albahaca</label></li>
+              <li><input type="checkbox" id="alcaucil" {...register('verduras.alcaucil')} value="alcaucil"/><label htmlFor="alcaucil">alcaucil</label></li>
               <li><input type="checkbox" id="acelga" {...register('verduras.acelga')} value="acelga"/><label htmlFor="acelga">acelga</label></li>
               <li><input type="checkbox" id="achicoria" {...register('verduras.achicoria')} value="achicoria"/><label htmlFor="achicoria">achicoria</label></li>
               <li><input type="checkbox" id="apio" {...register('verduras.apio')} value="apio"/><label htmlFor="apio">apio</label></li>
+              <li><input type="checkbox" id="arvejas" {...register('verduras.arvejas')} value="arvejas"/><label htmlFor="arvejas">arvejas frescas</label></li>
+              <li><input type="checkbox" id="batata" {...register('verduras.batata')} value="batata"/><label htmlFor="batata">batata</label></li>
               <li><input type="checkbox" id="berenjena" {...register('verduras.berenjena')} value="berenjena"/><label htmlFor="berenjena">berenjena</label></li>
               <li><input type="checkbox" id="berro" {...register('verduras.berro')} value="berro"/><label htmlFor="berro">berro</label></li>
               <li><input type="checkbox" id="brocoli" {...register('verduras.brocoli')} value="brocoli"/><label htmlFor="brocoli">brocoli</label></li>
-              <li><input type="checkbox" id="coliflor" {...register('verduras.coliflor')} value="coliflor"/><label htmlFor="coliflor">coliflor</label></li>
-              <li><input type="checkbox" id="escarola" {...register('verduras.escarola')} value="escarola"/><label htmlFor="escarola">escarola</label></li>
-              <li><input type="checkbox" id="espinaca" {...register('verduras.espinaca')} value="espinaca"/><label htmlFor="espinaca">espinaca</label></li>
-              <li><input type="checkbox" id="hinojo" {...register('verduras.hinojo')} value="hinojo"/><label htmlFor="hinojo">hinojo</label></li>
-              <li><input type="checkbox" id="esparragos" {...register('verduras.esparragos')} value="esparragos"/><label htmlFor="esparragos">esparragos</label></li>
-              <li><input type="checkbox" id="endibia" {...register('verduras.endibia')} value="endibia"/><label htmlFor="endibia">endibia</label></li>
-              <li><input type="checkbox" id="lechuga" {...register('verduras.lechuga')} value="lechuga"/><label htmlFor="lechuga">lechuga</label></li>
-              <li><input type="checkbox" id="morronrojo" {...register('verduras.morronrojo')} value="morronrojo"/><label htmlFor="morronrojo">morrón rojo</label></li>
-              <li><input type="checkbox" id="morronverde" {...register('verduras.morronverde')} value="morronverde"/><label htmlFor="morronverde">morrón verde</label></li>
-              <li><input type="checkbox" id="pepino" {...register('verduras.pepino')} value="pepino"/><label htmlFor="pepino">pepino</label></li>
-              <li><input type="checkbox" id="rabano" {...register('verduras.rabano')} value="rabano"/><label htmlFor="rabano">rábano</label></li>
-              <li><input type="checkbox" id="rabanito" {...register('verduras.rabanito')} value="rabanito"/><label htmlFor="rabanito">rabanito</label></li>
-              <li><input type="checkbox" id="radicheta" {...register('verduras.radicheta')} value="radicheta"/><label htmlFor="radicheta">radicheta</label></li>
-              <li><input type="checkbox" id="repollo" {...register('verduras.repollo')} value="repollo"/><label htmlFor="repollo">repollo</label></li>
-              <li><input type="checkbox" id="tomate" {...register('verduras.tomate')} value="tomate"/><label htmlFor="tomate">tomate</label></li>
-              <li><input type="checkbox" id="repollitobruselas" {...register('verduras.repollitobruselas')} value="repollitobruselas"/><label htmlFor="repollitobruselas">repollito de bruselas</label></li>
-              <li><input type="checkbox" id="zapallito" {...register('verduras.zapallito')} value="zapallito"/><label htmlFor="zapallito">zapallito</label></li>
-              <li><input type="checkbox" id="alcaucil" {...register('verduras.alcaucil')} value="alcaucil"/><label htmlFor="alcaucil">alcaucil</label></li>
-              <li><input type="checkbox" id="arvejas" {...register('verduras.arvejas')} value="arvejas"/><label htmlFor="arvejas">arvejas frescas</label></li>
+              <li><input type="checkbox" id="brotesdesoja" {...register('verduras.brotesdesoja')} value="brotesdesoja"/><label htmlFor="brotesdesoja">brotes de soja</label></li>
               <li><input type="checkbox" id="cebolla" {...register('verduras.cebolla')} value="cebolla"/><label htmlFor="cebolla">cebolla</label></li>
               <li><input type="checkbox" id="cebollaverdeo" {...register('verduras.cebollaverdeo')} value="cebollaverdeo"/><label htmlFor="cebollaverdeo">cebolla de verdeo</label></li>
-              <li><input type="checkbox" id="brotesdesoja" {...register('verduras.brotesdesoja')} value="brotesdesoja"/><label htmlFor="brotesdesoja">brotes de soja</label></li>
               <li><input type="checkbox" id="chauchas" {...register('verduras.chauchas')} value="chauchas"/><label htmlFor="chauchas">chauchas</label></li>
+              <li><input type="checkbox" id="choclo" {...register('verduras.choclo')} value="choclo"/><label htmlFor="choclo">choclo</label></li>
+              <li><input type="checkbox" id="coliflor" {...register('verduras.coliflor')} value="coliflor"/><label htmlFor="coliflor">coliflor</label></li>
+              <li><input type="checkbox" id="endibia" {...register('verduras.endibia')} value="endibia"/><label htmlFor="endibia">endibia</label></li>
+              <li><input type="checkbox" id="escarola" {...register('verduras.escarola')} value="escarola"/><label htmlFor="escarola">escarola</label></li>
+              <li><input type="checkbox" id="esparragos" {...register('verduras.esparragos')} value="esparragos"/><label htmlFor="esparragos">espárragos</label></li>
+              <li><input type="checkbox" id="espinaca" {...register('verduras.espinaca')} value="espinaca"/><label htmlFor="espinaca">espinaca</label></li>
               <li><input type="checkbox" id="habas" {...register('verduras.habas')} value="habas"/><label htmlFor="habas">habas</label></li>
+              <li><input type="checkbox" id="hinojo" {...register('verduras.hinojo')} value="hinojo"/><label htmlFor="hinojo">hinojo</label></li>
+              <li><input type="checkbox" id="lechuga" {...register('verduras.lechuga')} value="lechuga"/><label htmlFor="lechuga">lechuga</label></li>
+              <li><input type="checkbox" id="mandioca" {...register('verduras.mandioca')} value="mandioca"/><label htmlFor="mandioca">mandioca</label></li>
+              <li><input type="checkbox" id="morronrojo" {...register('verduras.morronrojo')} value="morronrojo"/><label htmlFor="morronrojo">morrón rojo</label></li>
+              <li><input type="checkbox" id="morronverde" {...register('verduras.morronverde')} value="morronverde"/><label htmlFor="morronverde">morrón verde</label></li>
               <li><input type="checkbox" id="nabo" {...register('verduras.nabo')} value="nabo"/><label htmlFor="nabo">nabo</label></li>
+              <li><input type="checkbox" id="pepino" {...register('verduras.pepino')} value="pepino"/><label htmlFor="pepino">pepino</label></li>
+              <li><input type="checkbox" id="tomate" {...register('verduras.tomate')} value="tomate"/><label htmlFor="tomate">tomate</label></li>
+              <li><input type="checkbox" id="palta" {...register('verduras.palta')} value="palta"/><label htmlFor="palta">palta</label></li>
+              <li><input type="checkbox" id="papa" {...register('verduras.papa')} value="papa"/><label htmlFor="papa">papa</label></li>
               <li><input type="checkbox" id="palmitos" {...register('verduras.palmitos')} value="palmitos"/><label htmlFor="palmitos">palmitos</label></li>
               <li><input type="checkbox" id="puerro" {...register('verduras.puerro')} value="puerro"/><label htmlFor="puerro">puerro</label></li>
-              <li><input type="checkbox" id="zanahoria" {...register('verduras.zanahoria')} value="zanahoria"/><label htmlFor="zanahoria">zanahoria</label></li>
+              <li><input type="checkbox" id="radicheta" {...register('verduras.radicheta')} value="radicheta"/><label htmlFor="radicheta">radicheta</label></li>
+              <li><input type="checkbox" id="rabanito" {...register('verduras.rabanito')} value="rabanito"/><label htmlFor="rabanito">rabanito</label></li>
+              <li><input type="checkbox" id="rabano" {...register('verduras.rabano')} value="rabano"/><label htmlFor="rabano">rábano</label></li>
               <li><input type="checkbox" id="remolacha" {...register('verduras.remolacha')} value="remolacha"/><label htmlFor="remolacha">remolacha</label></li>
-              <li><input type="checkbox" id="zapallo" {...register('verduras.zapallo')} value="zapallo"/><label htmlFor="zapallo">zapallo</label></li>
+              <li><input type="checkbox" id="repollitobruselas" {...register('verduras.repollitobruselas')} value="repollitobruselas"/><label htmlFor="repollitobruselas">repollito de bruselas</label></li>
+              <li><input type="checkbox" id="repollo" {...register('verduras.repollo')} value="repollo"/><label htmlFor="repollo">repollo</label></li>
               <li><input type="checkbox" id="rucula" {...register('verduras.rucula')} value="rucula"/><label htmlFor="rucula">rucula</label></li>
-              <li><input type="checkbox" id="albahaca" {...register('verduras.albahaca')} value="albahaca"/><label htmlFor="albahaca">albahaca</label></li>
-              <li><input type="checkbox" id="papa" {...register('verduras.papa')} value="papa"/><label htmlFor="papa">papa</label></li>
-              <li><input type="checkbox" id="batata" {...register('verduras.batata')} value="batata"/><label htmlFor="batata">batata</label></li>
-              <li><input type="checkbox" id="choclo" {...register('verduras.choclo')} value="choclo"/><label htmlFor="choclo">choclo</label></li>
-              <li><input type="checkbox" id="mandioca" {...register('verduras.mandioca')} value="mandioca"/><label htmlFor="mandioca">mandioca</label></li>
-              <li><input type="checkbox" id="palta" {...register('verduras.palta')} value="palta"/><label htmlFor="palta">palta</label></li>
+              <li><input type="checkbox" id="zanahoria" {...register('verduras.zanahoria')} value="zanahoria"/><label htmlFor="zanahoria">zanahoria</label></li>
+              <li><input type="checkbox" id="zapallo" {...register('verduras.zapallo')} value="zapallo"/><label htmlFor="zapallo">zapallo</label></li>
+              
+              <li><input type="checkbox" id="zapallito" {...register('verduras.zapallito')} value="zapallito"/><label htmlFor="zapallito">zapallito</label></li>
             </ul>
 
           </section>
@@ -666,26 +664,26 @@ function App() {
             <h2>Frutas</h2>
             <p className="text-gray-500">por favor tachar aquellas que NO consuma.</p>
             <ul className="grid gap-5 py-5 lista frutas">
+              <li><input type="checkbox" id="anana" {...register('frutas.anana')} value="anana"/><label htmlFor="anana">ananá</label></li>
+              <li><input type="checkbox" id="arandanos" {...register('frutas.arandanos')} value="arandanos"/><label htmlFor="arandanos">arándanos</label></li>
+              <li><input type="checkbox" id="banana" {...register('frutas.banana')} value="banana"/><label htmlFor="banana">banana</label></li>
+              <li><input type="checkbox" id="cereza" {...register('frutas.cereza')} value="cereza"/><label htmlFor="cereza">cereza</label></li>
+              <li><input type="checkbox" id="ciruela" {...register('frutas.ciruela')} value="ciruela"/><label htmlFor="ciruela">ciruela</label></li>
+              <li><input type="checkbox" id="damasco" {...register('frutas.damasco')} value="damasco"/><label htmlFor="damasco">damasco</label></li>
+              <li><input type="checkbox" id="durazno" {...register('frutas.durazno')} value="durazno"/><label htmlFor="durazno">durazno</label></li>
+              <li><input type="checkbox" id="frambuesa" {...register('frutas.frambuesa')} value="frambuesa"/><label htmlFor="frambuesa">frambuesa</label></li>
               <li><input type="checkbox" id="frutillas" {...register('frutas.frutillas')} value="frutillas"/><label htmlFor="frutillas">frutillas</label></li>
               <li><input type="checkbox" id="guinda" {...register('frutas.guinda')} value="guinda"/><label htmlFor="guinda">guinda</label></li>
-              <li><input type="checkbox" id="limon" {...register('frutas.limon')} value="limon"/><label htmlFor="limon">limon</label></li>
-              <li><input type="checkbox" id="ciruela" {...register('frutas.ciruela')} value="ciruela"/><label htmlFor="ciruela">ciruela</label></li>
-              <li><input type="checkbox" id="sandia" {...register('frutas.sandia')} value="sandia"/><label htmlFor="sandia">sandia</label></li>
-              <li><input type="checkbox" id="mandarina" {...register('frutas.mandarina')} value="mandarina"/><label htmlFor="mandarina">mandarina</label></li>
-              <li><input type="checkbox" id="manzana" {...register('frutas.manzana')} value="manzana"/><label htmlFor="manzana">manzana</label></li>
-              <li><input type="checkbox" id="kiwi" {...register('frutas.kiwi')} value="kiwi"/><label htmlFor="kiwi">kiwi</label></li>
               <li><input type="checkbox" id="higo" {...register('frutas.higo')} value="higo"/><label htmlFor="higo">higo</label></li>
-              <li><input type="checkbox" id="pera" {...register('frutas.pera')} value="pera"/><label htmlFor="pera">pera</label></li>
-              <li><input type="checkbox" id="anana" {...register('frutas.anana')} value="anana"/><label htmlFor="anana">ananá</label></li>
-              <li><input type="checkbox" id="durazno" {...register('frutas.durazno')} value="durazno"/><label htmlFor="durazno">durazno</label></li>
-              <li><input type="checkbox" id="damasco" {...register('frutas.damasco')} value="damasco"/><label htmlFor="damasco">damasco</label></li>
-              <li><input type="checkbox" id="cereza" {...register('frutas.cereza')} value="cereza"/><label htmlFor="cereza">cereza</label></li>
-              <li><input type="checkbox" id="frambuesa" {...register('frutas.frambuesa')} value="frambuesa"/><label htmlFor="frambuesa">frambuesa</label></li>
-              <li><input type="checkbox" id="banana" {...register('frutas.banana')} value="banana"/><label htmlFor="banana">banana</label></li>
-              <li><input type="checkbox" id="uva" {...register('frutas.uva')} value="uva"/><label htmlFor="uva">uva</label></li>
-              <li><input type="checkbox" id="arandanos" {...register('frutas.arandanos')} value="arandanos"/><label htmlFor="arandanos">arándanos</label></li>
+              <li><input type="checkbox" id="kiwi" {...register('frutas.kiwi')} value="kiwi"/><label htmlFor="kiwi">kiwi</label></li>
+              <li><input type="checkbox" id="limon" {...register('frutas.limon')} value="limon"/><label htmlFor="limon">limon</label></li>
+              <li><input type="checkbox" id="mandarina" {...register('frutas.mandarina')} value="mandarina"/><label htmlFor="mandarina">mandarina</label></li>
               <li><input type="checkbox" id="mango" {...register('frutas.mango')} value="mango"/><label htmlFor="mango">mango</label></li>
               <li><input type="checkbox" id="mamon" {...register('frutas.mamon')} value="mamon"/><label htmlFor="mamon">mamon</label></li>
+              <li><input type="checkbox" id="manzana" {...register('frutas.manzana')} value="manzana"/><label htmlFor="manzana">manzana</label></li>
+              <li><input type="checkbox" id="pera" {...register('frutas.pera')} value="pera"/><label htmlFor="pera">pera</label></li>
+              <li><input type="checkbox" id="sandia" {...register('frutas.sandia')} value="sandia"/><label htmlFor="sandia">sandia</label></li>
+              <li><input type="checkbox" id="uva" {...register('frutas.uva')} value="uva"/><label htmlFor="uva">uva</label></li>
              
             </ul>
           </section>
@@ -761,7 +759,7 @@ function App() {
               {
                 watch("actividad.comidaantes") && (
                   <label className='w-full'>¿Qué?
-                    <input className='bottom-line' {...register('activida.quecomeantes')} />
+                    <input className='bottom-line' {...register('actividad.quecomeantes')} />
                   </label>)
               }
               <label className="flex items-center gap-4 py-4">
@@ -773,20 +771,20 @@ function App() {
               {
                 watch("actividad.comidadespues") && (
                   <label className='w-full'>¿Qué?
-                    <input className='bottom-line' {...register('activida.quecomedespues')} />
+                    <input className='bottom-line' {...register('actividad.quecomedespues')} />
                   </label>)
               }
               <label className='w-full pt-5'>¿Qué bebidas utiliza durante el entrenamiento?
                 <input className='bottom-line' {...register('actividad.bebidas')} />
               </label>
               <label className='w-full'>¿Cual es tu comida favorita?
-                <input className='bottom-line' {...register('comidafavorita')} />
+                <input className='bottom-line' {...register('otros.comidafavorita')} />
               </label>
               <label className='w-full'>¿Cual es el motivo de la consulta?
-                <input className='bottom-line' {...register('comidafavorita')} />
+                <input className='bottom-line' {...register('otros.motivoconsulta')} />
               </label>
               <label className='w-full'>¿Como me conociste?
-                <input className='bottom-line' {...register('comidafavorita')} />
+                <input className='bottom-line' {...register('otros.comoconociste')} />
               </label>
             </div>
 

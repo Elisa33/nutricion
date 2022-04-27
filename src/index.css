@@ -7,7 +7,7 @@
 }
 
 .bottom-line{
-  @apply w-full border-0 border-b-2 border-dotted;
+  @apply w-full border-0 border-b-2 border-dotted text-olive;
 }
 
 .alimentos{
@@ -31,10 +31,10 @@
     @apply block p-2 border border-gray-300 rounded bg-neutral focus:outline-none focus:border-olive;
   }
   input[type="number"]{
-    @apply block p-2 border border-gray-300 rounded bg-neutral focus:outline-none focus:border-olive;
+    @apply block w-full p-2 border-0 border-b-2 border-dotted rounded bg-neutral focus:outline-none focus:border-olive;
   }
   input[type="email"]{
-    @apply block p-2 border border-gray-300 rounded bg-neutral focus:outline-none focus:border-olive;
+    @apply block w-full p-2 border-0 border-b-2 border-dotted rounded bg-neutral focus:outline-none focus:border-olive;
   }
   input[type="checkbox"]{
     @apply block p-2 border border-gray-300 rounded-full focus:outline-none focus:border-gray-300;
