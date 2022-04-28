@@ -32,7 +32,7 @@ function FichaNutricional() {
   return (
  
      
-      <div className="bg-green">
+    <div className="bg-green">
       <div className="pt-10 wrapper">
         <h1 className='font-bold'>Ficha nutricional</h1>
       
@@ -789,7 +789,7 @@ function FichaNutricional() {
             </div>
 
           </section>
-          <button type="submit" className='w-full bg-white text-green py-3 rounded-lg hover:shadow-lg hover:-translate-y-1'>Enviar</button>
+          <button type="submit" className='w-full bg-accent text-white py-3 rounded-lg hover:shadow-lg hover:-translate-y-1'>Enviar</button>
         </form>
       </div>
     </div>
