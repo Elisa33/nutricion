@@ -29,6 +29,7 @@ const Paciente = () => {
                 const docSnap = await getDoc(pacienteDatos);
 
                 if (docSnap.exists()) {
+                    
                 //console.log(docSnap.data().data);
                 setPaciente(docSnap.data().data);
                
@@ -58,19 +59,17 @@ const Paciente = () => {
         <h2>Dieta</h2>
         {
             dieta && (
-                <div className='capitalize'>{dieta.almuerzo} {dieta.almuerzohora}</div>
+                <div className='capitalize'>Almuerzo: {dieta.almuerzo} {dieta.almuerzohora}hs</div>
             )
         }
         <h2>Frutas</h2>
         
         {
-           frutas && Object.entries(frutas).forEach(([key, value]) => {
-            if(value){
-                <div>hol - {key}</div>
-
-            }
-           })
+           frutas && Object.entries(frutas).map(([key, value]) => (
+                value &&  <div>{key}</div>
+           ))
         }
+        
        
        
           
