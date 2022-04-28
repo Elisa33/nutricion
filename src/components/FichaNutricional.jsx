@@ -55,9 +55,9 @@ function FichaNutricional() {
               {errors.apellido && <span>Ingresa tu apellido</span>}
             </label>
             <label>Edad
-              <input className='bottom-line' type="number" {...register("datos.edad", { min: 18, max: 99 })} />
+              <input className='bottom-line' type="number" {...register("datos.edad")} />
             </label>
-            <label>Altura
+            <label>Altura en centimetros
             <input className='bottom-line' type="number" {...register("datos.altura")} />
             </label>
             <label>Peso
@@ -79,7 +79,7 @@ function FichaNutricional() {
             <label>Teléfono
               <input className='bottom-line' {...register("datos.telefono", { required: true })} />
             </label>
-            <button type="button" onClick={completeFormStep} className='w-full py-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
+            <button type="button" onClick={completeFormStep} className='w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
             </section>
           )}
           {/* HC */}
@@ -272,7 +272,7 @@ function FichaNutricional() {
               }
             
             
-            <button type="button" onClick={completeFormStep} className='w-full py-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
+            <button type="button" onClick={completeFormStep} className='w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
             </section>
           )}
           {/* Alimentos */}
@@ -522,7 +522,7 @@ function FichaNutricional() {
                       <svg width="12px" height="9px" viewBox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>
                       </svg>
-                    </span>castania
+                    </span>castaña
                   </label>
                   <input className="invisible inp-cbx" id="pistacho" type="checkbox" {...register('frutossecos.pistacho')} />
                   <label className="cbx alimentos" htmlFor="pistacho"><span>
@@ -627,7 +627,7 @@ function FichaNutricional() {
               </label>
             
             
-            <button type="button" onClick={completeFormStep} className='w-full py-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
+            <button type="button" onClick={completeFormStep} className='w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
           
             </section>
           )}
@@ -685,7 +685,7 @@ function FichaNutricional() {
 
             
             
-            <button type="button" onClick={completeFormStep} className='w-full py-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
+            <button type="button" onClick={completeFormStep} className='w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
           
             </section>
           )}
@@ -719,7 +719,7 @@ function FichaNutricional() {
               </ul>
             
             
-            <button type="button" onClick={completeFormStep} className='w-full py-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
+            <button type="button" onClick={completeFormStep} className='w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
           
             </section>
           )}
@@ -731,55 +731,55 @@ function FichaNutricional() {
               <div className="flex items-center justify-between py-5">
                 <h4>Desayuno</h4>
                 <label className='flex items-center gap-4'>Hora:
-                    <input className='w-20'{...register('dieta.desayunohora')} />
+                    <input className='w-20'type="number" {...register('dieta.desayunohora')} />
                 </label>
               </div>
               <input className='bottom-line' {...register('dieta.desayuno')} />
               <div className="flex items-center justify-between py-5">
                 <h4>colacion</h4>
                 <label className='flex items-center gap-4'>Hora:
-                    <input className='w-20'{...register('dieta.colacionhora')} />
+                    <input className='w-20'type="number" {...register('dieta.colacionhora')} />
                 </label>
               </div>
               <input className='bottom-line' {...register('dieta.colacion')} />
               <div className="flex items-center justify-between py-5">
                 <h4>almuerzo</h4>
                 <label className='flex items-center gap-4'>Hora:
-                    <input className='w-20'{...register('dieta.almuerzohora')} />
+                    <input className='w-20'type="number" {...register('dieta.almuerzohora')} />
                 </label>
               </div>
               <input className='bottom-line' {...register('dieta.almuerzo')} />
               <div className="flex items-center justify-between py-5">
                 <h4>merienda</h4>
                 <label className='flex items-center gap-4'>Hora:
-                    <input className='w-20'{...register('dieta.meriendahora')} />
+                    <input className='w-20'type="number" {...register('dieta.meriendahora')} />
                 </label>
               </div>
               <input className='bottom-line' {...register('dieta.merienda')} />
               <div className="flex items-center justify-between py-5">
                 <h4>colacion</h4>
                 <label className='flex items-center gap-4'>Hora:
-                    <input className='w-20'{...register('dieta.colaciondoshora')} />
+                    <input className='w-20'type="number" {...register('dieta.colaciondoshora')} />
                 </label>
               </div>
               <input className='bottom-line' {...register('dieta.colaciondos')} />
               <div className="flex items-center justify-between py-5">
                 <h4>cena</h4>
                 <label className='flex items-center gap-4'>Hora:
-                    <input className='w-20'{...register('dieta.cenahora')} />
+                    <input className='w-20'type="number" {...register('dieta.cenahora')} />
                 </label>
               </div>
               <input className='bottom-line' {...register('dieta.cena')} />
               <div className="flex items-center justify-between py-5">
                 <h4>otras</h4>
                 <label className='flex items-center gap-4'>Hora:
-                    <input className='w-20'{...register('dieta.otrashora')} />
+                    <input className='w-20'type="number" {...register('dieta.otrashora')} />
                 </label>
               </div>
               <input className='bottom-line' {...register('dieta.otras')} />
             
             
-            <button type="button" onClick={completeFormStep} className='w-full py-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
+            <button type="button" onClick={completeFormStep} className='w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
           
             </section>
           )}
@@ -792,7 +792,7 @@ function FichaNutricional() {
                   <input className='bottom-line' {...register('actividad.tipo')} />
                 </label>
                 <label className='w-full'>Horas de entrenamiento por semana
-                  <input className='bottom-line' {...register('actividad.tiempo')} />
+                  <input className='bottom-line' type="number"{...register('actividad.tiempo')} />
                 </label>
                 <label className="flex items-center gap-4 py-4">
                   <span>¿Come algo antes de entrenar?</span>
