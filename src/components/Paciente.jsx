@@ -12,7 +12,7 @@ const Paciente = () => {
 
     otros && console.log(otros)
     paciente && console.log(paciente)
-    console.log(Object.entries(actividad))
+    
         
     frutas && Object.entries(frutas).forEach(([key, value]) => {
         if(value){
@@ -169,16 +169,16 @@ const Paciente = () => {
           <h2>Actividad fisica</h2>
          
           
-          {/* {actividad.tipo &&  <p className='normal-case'>Tipo: {actividad.tipo} </p>          }
-          {actividad.tiempo &&  <p className='normal-case'>tiempo: {actividad.tiempo} hs</p>          }
-          {actividad.bebidas &&  <p className='normal-case'>bebidas: {actividad.bebidas} </p>          } */}
+          {/* {actividad.tipo &&  <p className='normal-case'>Tipo: {actividad.tipo} </p>  }
+          {actividad.tiempo &&  <p className='normal-case'>tiempo: {actividad.tiempo} hs</p>   }
+          {actividad.bebidas &&  <p className='normal-case'>bebidas: {actividad.bebidas} </p>  } */}
         </div>
         <div>
           <h2>Otros</h2>
           
-          {otros.comidafavorita &&  <p className='normal-case'>Comida favorita: {otros.comidafavorita}</p>          }
+          {/* {otros.comidafavorita &&  <p className='normal-case'>Comida favorita: {otros.comidafavorita}</p>          }
           {otros.motivoconsulta &&  <p className='normal-case'>Motivo consulta: {otros.motivoconsulta}</p>          }
-          {otros.comoconociste &&  <p className='normal-case'>Como me conociste: {otros.comoconociste} </p> }         
+          {otros.comoconociste &&  <p className='normal-case'>Como me conociste: {otros.comoconociste} </p> }  */}        
         </div>
         
         
