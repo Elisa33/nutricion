@@ -26,12 +26,12 @@ const Pacientes = () => {
 
 
   return (
-    <div className="bg-green">
+    <div className="min-h-screen bg-green">
       <div className="pt-10 wrapper">
         <h1>Listado pacientes</h1>
         {/* <nav>
-            <button onClick={()=>{setVerPdf(!verPdf)}} className='p-4 rounded-md bg-white m-6 text-green'>Ver pdf</button>
-            <button className='p-4 rounded-md bg-white m-6 text-green'>Descargar pdf</button>
+            <button onClick={()=>{setVerPdf(!verPdf)}} className='p-4 m-6 bg-white rounded-md text-green'>Ver pdf</button>
+            <button className='p-4 m-6 bg-white rounded-md text-green'>Descargar pdf</button>
         </nav> */}
         <ul className='py-20'>
 
