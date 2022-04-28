@@ -16,6 +16,9 @@
 .fruit{
   @apply flex items-center gap-2;
 }
+.hora{
+  @apply w-20;
+}
 
 @layer base {
   h1 {
@@ -34,7 +37,7 @@
     @apply block p-2 border border-gray-300 rounded bg-neutral focus:outline-none focus:border-olive;
   }
   input[type="number"]{
-    @apply block w-full p-2 border-0 border-b-2 border-dotted rounded bg-neutral focus:outline-none focus:border-olive;
+    @apply block p-2 rounded bg-neutral focus:outline-none focus:border-olive;
   }
   input[type="email"]{
     @apply block w-full p-2 border-0 border-b-2 border-dotted rounded bg-neutral focus:outline-none focus:border-olive;
