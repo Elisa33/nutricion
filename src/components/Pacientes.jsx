@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Link } from "react-router-dom";
+import { Link, HashRouter } from "react-router-dom";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import { db } from '../firebase'
 const Pacientes = () => {
@@ -33,16 +33,18 @@ const Pacientes = () => {
             <button onClick={()=>{setVerPdf(!verPdf)}} className='p-4 m-6 bg-white rounded-md text-green'>Ver pdf</button>
             <button className='p-4 m-6 bg-white rounded-md text-green'>Descargar pdf</button>
         </nav> */}
-        <ul className='py-20'>
+        <div className='py-20'>
 
-        {respuestas.map((item)=>(
-            <li key={item.id}>
-                <Link to={`/pacientes/${item.id}`} className="capitalize text-accent">
-                {item.data.datos.nombre} {item.data.datos.apellido}
-                </Link>
-            </li>
-        ))}
-        </ul>
+        <HashRouter>
+          {respuestas.map((item)=>(
+          
+                  <Link key={item.id} to={`/pacientes/${item.id}`} className="capitalize text-accent">
+                  {item.data.datos.nombre} {item.data.datos.apellido}
+                  </Link>
+          
+          ))}
+        </HashRouter>
+        </div>
     </div>
     </div>
   )
