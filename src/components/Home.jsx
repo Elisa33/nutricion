@@ -7,10 +7,12 @@ import {
 
 const Home = () => {
   return (
-    <div className="bg-green text-white h-screen p-16 flex flex-col items-center gap-5">
-        <h2 className="text-white text-center">Hola! soy tu nutricionista, a te pido por favor que completes el siguiente formulario a fin de que....</h2>
-        <Link to="/ficha" className="bg-white p-3 rounded-lg text-green">Ficha Nutricional</Link>
-        <Link to="/pacientes" className="bg-white p-3 rounded-lg text-green">pacientes</Link>
+    <div className="text-white  bg-green">
+        <div className="flex flex-col items-center h-screen gap-5 p-16 wrapper">
+          <h2 className="text-center text-white">Hola! soy tu nutricionista, a te pido por favor que completes el siguiente formulario a fin de que....</h2>
+          <Link to="/ficha" className="p-3 bg-white rounded-lg text-green">Ficha Nutricional</Link>
+          <Link to="/pacientes" className="p-3 bg-white rounded-lg text-green">pacientes</Link>
+        </div>
     </div>
   )
 }
