@@ -72,11 +72,22 @@ const Paciente = () => {
         
         <div>
           <h2>Historia Clinica</h2>
-          {
-             hc && Object.entries(hc).map(([key, value]) => (
-                  value &&  <p>{key} - {value}</p>
-             ))
-          }
+          
+          {hc.suplementos && <p>suplementos: {hc.textosuplementos}</p>}
+          {hc.dieta && <p>dieta: {hc.textodieta}</p>}
+          {hc.fuera && <p>fuera: {hc.textofuera}</p>}
+          {hc.metabolica && <p>metabolica: {hc.textometabolica}</p>}
+          {hc.alergias && <p>alergias: {hc.textoalergias}</p>}
+          {hc.lactosa && <p>lactosa: {hc.textolactosa}</p>}
+          {hc.irritable && <p>irritable: {hc.textoirritable}</p>}
+          {hc.estrenimiento && <p>estrenimiento: {hc.textoestrenimiento}</p>}
+          {hc.intoleracia && <p>intoleracia: {hc.textointoleracia}</p>}
+          {hc.vesicula && <p>vesicula: {hc.textovesicula}</p>}
+          {hc.diverticulos && <p>Anticonceptivos: {hc.textoanticonceptivos}</p>}
+          {hc.renal && <p>renal: {hc.textorenal}</p>}
+          {hc.medicacion && <p>medicacion: {hc.textomedicacion}</p>}
+          {hc.anticonceptivos && <p>Anticonceptivos: {hc.textoanticonceptivos}</p>}
+          
         </div>
         <div>
           <h2>Alimentos</h2>
@@ -147,17 +158,17 @@ const Paciente = () => {
           {
               dieta && (
                   <div>
-                    <p className='normal-case'>Desayuno: {dieta.desayuno} {dieta.desayunohora}hs</p>
+                    <p className='normal-case'>{dieta.desayunohora}hs Desayuno: {dieta.desayuno} </p>
                     {
-                      dieta.colacion &&  <p className='normal-case'>Colacion: {dieta.colacion} {dieta.colacionhora}hs</p>
+                      dieta.colacion &&  <p className='normal-case'>{dieta.colacionhora}hs Colacion: {dieta.colacion} </p>
                     }
                    
                     <p className='normal-case'>Almuerzo: {dieta.almuerzo} {dieta.almuerzohora}hs</p>
                     {
-                      dieta.colaciondos &&  <p className='normal-case'>Colaciondos: {dieta.colaciondos} {dieta.colaciondoshora}hs</p>
+                      dieta.colaciondos &&  <p className='normal-case'>{dieta.colaciondoshora} Colacion: {dieta.colaciondos} hs</p>
                     }
-                    <p className='normal-case'>Merienda: {dieta.merienda} {dieta.meriendahora}hs</p>
-                    <p className='normal-case'>Cena: {dieta.cena} {dieta.cenahora}hs</p>
+                    <p className='normal-case'>{dieta.meriendahora}hs Merienda: {dieta.merienda} </p>
+                    <p className='normal-case'>{dieta.cenahora}hs Cena: {dieta.cena} </p>
                     {
                       dieta.otros &&  <p className='normal-case'>otros: {dieta.otros} {dieta.otroshora}hs</p>
                     }
@@ -169,16 +180,16 @@ const Paciente = () => {
           <h2>Actividad fisica</h2>
          
           
-          {/* {actividad.tipo &&  <p className='normal-case'>Tipo: {actividad.tipo} </p>  }
+          {actividad.tipo &&  <p className='normal-case'>Tipo: {actividad.tipo} </p>  }
           {actividad.tiempo &&  <p className='normal-case'>tiempo: {actividad.tiempo} hs</p>   }
-          {actividad.bebidas &&  <p className='normal-case'>bebidas: {actividad.bebidas} </p>  } */}
+          {actividad.bebidas &&  <p className='normal-case'>bebidas: {actividad.bebidas} </p>  }
         </div>
         <div>
           <h2>Otros</h2>
           
-          {/* {otros.comidafavorita &&  <p className='normal-case'>Comida favorita: {otros.comidafavorita}</p>          }
+          {otros.comidafavorita &&  <p className='normal-case'>Comida favorita: {otros.comidafavorita}</p>          }
           {otros.motivoconsulta &&  <p className='normal-case'>Motivo consulta: {otros.motivoconsulta}</p>          }
-          {otros.comoconociste &&  <p className='normal-case'>Como me conociste: {otros.comoconociste} </p> }  */}        
+          {otros.comoconociste &&  <p className='normal-case'>Como me conociste: {otros.comoconociste} </p> }         
         </div>
         
         

@@ -40,7 +40,7 @@ function FichaNutricional() {
       <div className="pt-10 wrapper">
       
         <form onSubmit={handleSubmit(onSubmit)} className="grid gap-8 pb-12">
-        <h1 className='font-bold'>Ficha nutricional</h1>
+          <h1 className='font-bold'>Ficha nutricional</h1>
           {/* Datos personales */}
           { formStep > 0 && (
             <section className="grid gap-5 md:grid-cols-2">
@@ -79,7 +79,10 @@ function FichaNutricional() {
             <label>Teléfono
               <input className='bottom-line' {...register("datos.telefono", { required: true })} />
             </label>
-            <button type="button" onClick={completeFormStep} className='w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
+            {
+              
+            }
+            <button type="button" onClick={completeFormStep} className={formStep > 1 ? 'hidden' : 'w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'}>Siguiente</button>
             </section>
           )}
           {/* HC */}
@@ -88,9 +91,11 @@ function FichaNutricional() {
               <h2>Historia Clínica</h2>
               <label className="flex items-center gap-4">
                 <span>¿Consume suplementos?</span>
-                <span>No</span>
-                  <input className="radio__toggle" type="checkbox" {...register('hc.suplementos')}/>
-                <span>Si</span>
+                <div className="flex items-center gap-2">
+                  <span>No</span>
+                    <input className="radio__toggle" type="checkbox" {...register('hc.suplementos')}/>
+                  <span>Si</span>
+                </div>
               </label>
               {
                 watch("hc.suplementos") && (
@@ -101,9 +106,11 @@ function FichaNutricional() {
               
               <label className="flex items-center gap-4">
                 <span>¿Realiza alguna dieta?</span>
-                <span>No</span>
-                  <input className="radio__toggle" type="checkbox" {...register('hc.dieta')}/>
-                <span>Si</span>
+                <div className="flex items-center gap-2">
+                  <span>No</span>
+                    <input className="radio__toggle" type="checkbox" {...register('hc.dieta')}/>
+                  <span>Si</span>
+                </div>
               </label>
 
               {
@@ -115,9 +122,11 @@ function FichaNutricional() {
 
               <label className="flex items-center gap-4">
                 <span>¿Come fuera del hogar?</span>
-                <span>No</span>
-                  <input className="radio__toggle" type="checkbox" {...register('hc.fuera')}/>
-                <span>Si</span>
+                <div className="flex items-center gap-2">
+                  <span>No</span>
+                    <input className="radio__toggle" type="checkbox" {...register('hc.fuera')}/>
+                  <span>Si</span>
+                </div>
               </label>
 
               {
@@ -129,9 +138,11 @@ function FichaNutricional() {
 
               <label className="flex items-center gap-4">
                 <span>¿Tiene alguna enfermedad metabólica de base?</span>
-                <span>No</span>
-                  <input className="radio__toggle" type="checkbox" {...register('hc.metabolica')}/>
-                <span>Si</span>
+                <div className="flex items-center gap-2">
+                  <span>No</span>
+                    <input className="radio__toggle" type="checkbox" {...register('hc.metabolica')}/>
+                  <span>Si</span>
+                </div>
               </label>
 
               {
@@ -142,9 +153,11 @@ function FichaNutricional() {
               }
               <label className="flex items-center gap-4">
                 <span>¿Alergias alimentarias?</span>
-                <span>No</span>
-                  <input className="radio__toggle" type="checkbox" {...register('hc.alergias')}/>
-                <span>Si</span>
+                <div className="flex items-center gap-2">
+                  <span>No</span>
+                    <input className="radio__toggle" type="checkbox" {...register('hc.alergias')}/>
+                  <span>Si</span>
+                </div>
               </label>
 
               {
@@ -155,9 +168,11 @@ function FichaNutricional() {
               }
               <label className="flex items-center gap-4">
                 <span>¿Intolerancia a la lactosa?</span>
-                <span>No</span>
-                  <input className="radio__toggle" type="checkbox" {...register('hc.lactosa')}/>
-                <span>Si</span>
+                <div className="flex items-center gap-2">
+                  <span>No</span>
+                    <input className="radio__toggle" type="checkbox" {...register('hc.lactosa')}/>
+                  <span>Si</span>
+                </div>
               </label>
 
               {
@@ -168,9 +183,11 @@ function FichaNutricional() {
               }
               <label className="flex items-center gap-4">
                 <span>¿Colon Irritable?</span>
-                <span>No</span>
-                  <input className="radio__toggle" type="checkbox" {...register('hc.irritable')}/>
-                <span>Si</span>
+                <div className="flex items-center gap-2">
+                  <span>No</span>
+                    <input className="radio__toggle" type="checkbox" {...register('hc.irritable')}/>
+                  <span>Si</span>
+                </div>
               </label>
 
               {
@@ -181,22 +198,26 @@ function FichaNutricional() {
               }
               <label className="flex items-center gap-4">
                 <span>¿Estreñimiento?</span>
-                <span>No</span>
-                  <input className="radio__toggle" type="checkbox" {...register('hc.estrenimientos')}/>
-                <span>Si</span>
+                <div className="flex items-center gap-2">
+                  <span>No</span>
+                    <input className="radio__toggle" type="checkbox" {...register('hc.estrenimiento')}/>
+                  <span>Si</span>
+                </div>
               </label>
 
               {
                 watch("hc.estrenimientos") && (
                   <label className='w-full'>Especificar
-                    <input className='bottom-line' {...register('hc.textoestrenimientos')} />
+                    <input className='bottom-line' {...register('hc.textoestrenimiento')} />
                   </label>)
               }
               <label className="flex items-center gap-4">
                 <span>¿Intolerancia alimentaria?</span>
-                <span>No</span>
-                  <input className="radio__toggle" type="checkbox" {...register('hc.intolerancia')}/>
-                <span>Si</span>
+                <div className="flex items-center gap-2">
+                  <span>No</span>
+                    <input className="radio__toggle" type="checkbox" {...register('hc.intolerancia')}/>
+                  <span>Si</span>
+                </div>
               </label>
 
               {
@@ -207,9 +228,11 @@ function FichaNutricional() {
               }
               <label className="flex items-center gap-4">
                 <span>¿Alteraciones de la vesícula biliar?</span>
-                <span>No</span>
-                  <input className="radio__toggle" type="checkbox" {...register('hc.vesicula')}/>
-                <span>Si</span>
+                <div className="flex items-center gap-2">
+                  <span>No</span>
+                    <input className="radio__toggle" type="checkbox" {...register('hc.vesicula')}/>
+                  <span>Si</span>
+                </div>
               </label>
 
               {
@@ -220,9 +243,11 @@ function FichaNutricional() {
               }
               <label className="flex items-center gap-4">
                 <span>¿Tiene o tuvo divertículos?</span>
-                <span>No</span>
-                  <input className="radio__toggle" type="checkbox" {...register('hc.diverticulos')}/>
-                <span>Si</span>
+                <div className="flex items-center gap-2">
+                  <span>No</span>
+                    <input className="radio__toggle" type="checkbox" {...register('hc.diverticulos')}/>
+                  <span>Si</span>
+                </div>
               </label>
 
               {
@@ -233,9 +258,11 @@ function FichaNutricional() {
               }
               <label className="flex items-center gap-4">
                 <span>¿Enfermedad renal?</span>
-                <span>No</span>
-                  <input className="radio__toggle" type="checkbox" {...register('hc.renal')}/>
-                <span>Si</span>
+                <div className="flex items-center gap-2">
+                  <span>No</span>
+                    <input className="radio__toggle" type="checkbox" {...register('hc.renal')}/>
+                  <span>Si</span>
+                </div>
               </label>
 
               {
@@ -246,9 +273,11 @@ function FichaNutricional() {
               }
               <label className="flex items-center gap-4">
                 <span>¿Toma medicación?</span>
-                <span>No</span>
-                  <input className="radio__toggle" type="checkbox" {...register('hc.medicacion')}/>
-                <span>Si</span>
+                <div className="flex items-center gap-2">
+                  <span>No</span>
+                    <input className="radio__toggle" type="checkbox" {...register('hc.medicacion')}/>
+                  <span>Si</span>
+                </div>
               </label>
 
               {
@@ -259,8 +288,10 @@ function FichaNutricional() {
               }
               <label className="flex items-center gap-4">
                 <span>¿Toma anticonceptivos?</span>
-                <span>No</span>
-                  <input className="radio__toggle" onClick={()=>{showInput('anticonceptivos')}} type="checkbox" {...register('hc.anticonceptivos')}/>
+                <div className="flex items-center gap-2">
+                  <span>No</span>
+                    <input className="radio__toggle" onClick={()=>{showInput('anticonceptivos')}} type="checkbox" {...register('hc.anticonceptivos')}/>
+                </div>
                 <span>Si</span>
               </label>
 
@@ -272,7 +303,7 @@ function FichaNutricional() {
               }
             
             
-            <button type="button" onClick={completeFormStep} className='w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
+            <button type="button" onClick={completeFormStep} className={formStep > 2 ? 'hidden' : 'w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'}>Siguiente</button>
             </section>
           )}
           {/* Alimentos */}
@@ -627,7 +658,7 @@ function FichaNutricional() {
               </label>
             
             
-            <button type="button" onClick={completeFormStep} className='w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
+            <button type="button" onClick={completeFormStep} className={formStep > 3 ? 'hidden' : 'w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'}>Siguiente</button>
           
             </section>
           )}
@@ -685,7 +716,7 @@ function FichaNutricional() {
 
             
             
-            <button type="button" onClick={completeFormStep} className='w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
+            <button type="button" onClick={completeFormStep} className={formStep > 4 ? 'hidden' : 'w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'}>Siguiente</button>
           
             </section>
           )}
@@ -719,7 +750,7 @@ function FichaNutricional() {
               </ul>
             
             
-            <button type="button" onClick={completeFormStep} className='w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
+            <button type="button" onClick={completeFormStep} className={formStep > 5 ? 'hidden' : 'w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'}>Siguiente</button>
           
             </section>
           )}
@@ -779,7 +810,7 @@ function FichaNutricional() {
               <input className='bottom-line' {...register('dieta.otras')} />
             
             
-            <button type="button" onClick={completeFormStep} className='w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Siguiente</button>
+            <button type="button" onClick={completeFormStep} className={formStep > 6 ? 'hidden' : 'w-full py-3 mt-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'}>Siguiente</button>
           
             </section>
           )}
@@ -796,9 +827,11 @@ function FichaNutricional() {
                 </label>
                 <label className="flex items-center gap-4 py-4">
                   <span>¿Come algo antes de entrenar?</span>
-                  <span>No</span>
-                    <input className="radio__toggle" type="checkbox" {...register('actividad.comidaantes')}/>
-                  <span>Si</span>
+                  <div className="flex items-center gap-2">
+                    <span>No</span>
+                      <input className="radio__toggle" type="checkbox" {...register('actividad.comidaantes')}/>
+                    <span>Si</span>
+                  </div>
                 </label>
                 {
                   watch("actividad.comidaantes") && (
@@ -808,9 +841,11 @@ function FichaNutricional() {
                 }
                 <label className="flex items-center gap-4 py-4">
                   <span>¿Come algo despues de entrenar?</span>
-                  <span>No</span>
-                    <input className="radio__toggle" type="checkbox" {...register('actividad.comidadespues')}/>
-                  <span>Si</span>
+                  <div className="flex items-center gap-2">
+                    <span>No</span>
+                      <input className="radio__toggle" type="checkbox" {...register('actividad.comidadespues')}/>
+                    <span>Si</span>
+                  </div>
                 </label>
                 {
                   watch("actividad.comidadespues") && (
@@ -831,7 +866,7 @@ function FichaNutricional() {
                   <input className='bottom-line' {...register('otros.comoconociste')} />
                 </label>
               </div>
-              <button type="submit" className='w-full py-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-secondary'>Enviar Formulario</button>
+              <button type="submit" className='w-full py-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-primary'>Confirmar y enviar formulario</button>
               <div className="pt-4 text-center text-primary">{mensaje}</div>
             </section>
           )}

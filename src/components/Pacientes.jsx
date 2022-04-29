@@ -39,7 +39,7 @@ const Pacientes = () => {
           {respuestas.map((item)=>(
           
                   <li>
-                    <Link key={item.id} to={`/pacientes/${item.id}`} className="capitalize text-accent">
+                    <Link key={item.id} to={`/pacientes/${item.id}`} className="capitalize text-accent hover:text-white">
                     {item.data.datos.nombre} {item.data.datos.apellido}
                     </Link>
                   </li>
