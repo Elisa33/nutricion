@@ -762,14 +762,14 @@ function FichaNutricional() {
               <div className="flex items-center justify-between py-5">
                 <h4>Desayuno</h4>
                 <label className='flex items-center gap-4'>Hora:
-                    <input className='w-20' type="text" pattern="\d*" {...register('dieta.desayunohora')} />
+                    <input className='w-20' type="text" inputmode="tel" {...register('dieta.desayunohora')} />
                 </label>
               </div>
               <input className='bottom-line' {...register('dieta.desayuno')} />
               <div className="flex items-center justify-between py-5">
                 <h4>colacion</h4>
                 <label className='flex items-center gap-4'>Hora:
-                    <input className='w-20' type="number" {...register('dieta.colacionhora')} />
+                    <input className='w-20' type="text" {...register('dieta.colacionhora')} />
                 </label>
               </div>
               <input className='bottom-line' {...register('dieta.colacion')} />
