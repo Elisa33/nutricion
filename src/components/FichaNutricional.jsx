@@ -33,7 +33,7 @@ function FichaNutricional() {
   }
 
   return (
-    <div className="bg-green">
+    <div className="bg-gradient-to-b from-yellow to-primary">
       <div className="pt-10 wrapper">
       {
         finishForm ? (
