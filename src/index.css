@@ -52,7 +52,7 @@
     @apply text-gray-500
   }
   section{
-    @apply px-5 py-8 my-12 rounded-lg bg-neutral;
+    @apply px-5 py-8 rounded-lg bg-neutral;
   }
   p, span{
     @apply text-gray-500;

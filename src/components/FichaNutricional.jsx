@@ -38,9 +38,9 @@ function FichaNutricional() {
      
     <div className="bg-green">
       <div className="pt-10 wrapper">
-        <h1 className='font-bold'>Ficha nutricional</h1>
       
-        <form onSubmit={handleSubmit(onSubmit)} className="pb-12">
+        <form onSubmit={handleSubmit(onSubmit)} className="grid gap-8 pb-12">
+        <h1 className='font-bold'>Ficha nutricional</h1>
           {/* Datos personales */}
           { formStep > 0 && (
             <section className="grid gap-5 md:grid-cols-2">
