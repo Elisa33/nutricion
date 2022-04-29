@@ -61,7 +61,7 @@ const Paciente = () => {
                     <p>Altura: {datos.altura} </p> 
                     <p>Peso: {datos.peso} </p>
                     </div>
-                    <p className='capitalize'>Email: {datos.email} </p>
+                    <p>Email: {datos.email} </p>
                     <p className='capitalize'>Teléfono: {datos.telefono} </p>
                   </div>
               )

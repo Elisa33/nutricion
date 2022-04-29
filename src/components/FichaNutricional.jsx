@@ -58,10 +58,10 @@ function FichaNutricional() {
               <input className='bottom-line' type="number" {...register("datos.edad")} />
             </label>
             <label>Altura
-            <input className='bottom-line' type="number" inputmode="decimal" {...register("datos.altura")} />
+            <input className='bottom-line' type="text" inputmode="decimal" {...register("datos.altura")} />
             </label>
             <label>Peso
-            <input className='bottom-line' type="number" inputmode="decimal" {...register("datos.peso")} />
+            <input className='bottom-line' type="text" inputmode="decimal" {...register("datos.peso")} />
             </label>
             <label>Email *
               <input className='bottom-line'
