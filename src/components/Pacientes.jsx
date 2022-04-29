@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Link, HashRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import { db } from '../firebase'
 const Pacientes = () => {
@@ -35,15 +35,17 @@ const Pacientes = () => {
         </nav> */}
         <div className='py-20'>
 
-        <HashRouter>
+        <ul>
           {respuestas.map((item)=>(
           
-                  <Link key={item.id} to={`/pacientes/${item.id}`} className="capitalize text-accent">
-                  {item.data.datos.nombre} {item.data.datos.apellido}
-                  </Link>
+                  <li>
+                    <Link key={item.id} to={`/pacientes/${item.id}`} className="capitalize text-accent">
+                    {item.data.datos.nombre} {item.data.datos.apellido}
+                    </Link>
+                  </li>
           
           ))}
-        </HashRouter>
+        </ul>
         </div>
     </div>
     </div>
