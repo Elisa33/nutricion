@@ -10,7 +10,7 @@ const Paciente = () => {
     const [paciente, setPaciente] = useState({})
     const {datos, carnes, dieta, frutas, verduras, hc, infusiones, lacteos, semillas, frutossecos, legumbres, panes, actividad, otros } = paciente;
 
-    otros && console.log(otros)
+    hc && console.log(hc.suplementos)
     paciente && console.log(paciente)
     
         
@@ -72,65 +72,74 @@ const Paciente = () => {
         
         <div>
           <h2>Historia Clinica</h2>
+
+          {
+            hc &&(
+              <div>
+
+                {hc.suplementos && <p>Suplementos: {hc.textosuplementos}</p>}
+                {hc.dieta && <p>Sieta: {hc.textodieta}</p>}
+                {hc.fuera && <p>Come afuera: {hc.textofuera}</p>}
+                {hc.metabolica && <p>Enfermedad metabólica: {hc.textometabolica}</p>}
+                {hc.alergias && <p>Alergias: {hc.textoalergias}</p>}
+                {hc.lactosa && <p>Lactosa: {hc.textolactosa}</p>}
+                {hc.irritable && <p>Colon irritable: {hc.textoirritable}</p>}
+                {hc.estrenimiento && <p>Estrenimiento: {hc.estrenimiento}</p>}
+                {hc.intoleracia && <p>Intoleracia: {hc.textointoleracia}</p>}
+                {hc.vesicula && <p>Vesicula: {hc.textovesicula}</p>}
+                {hc.diverticulos && <p>Diverticulos: {hc.textodiverticulos}</p>}
+                {hc.renal && <p>Renal: {hc.textorenal}</p>}
+                {hc.medicacion && <p>Medicacion: {hc.textomedicacion}</p>}
+                {hc.anticonceptivos && <p>Anticonceptivos: {hc.textoanticonceptivos}</p>}
+
+              </div>
+            )
+          }
           
-          {hc.suplementos && <p>suplementos: {hc.textosuplementos}</p>}
-          {hc.dieta && <p>dieta: {hc.textodieta}</p>}
-          {hc.fuera && <p>fuera: {hc.textofuera}</p>}
-          {hc.metabolica && <p>metabolica: {hc.textometabolica}</p>}
-          {hc.alergias && <p>alergias: {hc.textoalergias}</p>}
-          {hc.lactosa && <p>lactosa: {hc.textolactosa}</p>}
-          {hc.irritable && <p>irritable: {hc.textoirritable}</p>}
-          {hc.estrenimiento && <p>estrenimiento: {hc.textoestrenimiento}</p>}
-          {hc.intoleracia && <p>intoleracia: {hc.textointoleracia}</p>}
-          {hc.vesicula && <p>vesicula: {hc.textovesicula}</p>}
-          {hc.diverticulos && <p>Anticonceptivos: {hc.textoanticonceptivos}</p>}
-          {hc.renal && <p>renal: {hc.textorenal}</p>}
-          {hc.medicacion && <p>medicacion: {hc.textomedicacion}</p>}
-          {hc.anticonceptivos && <p>Anticonceptivos: {hc.textoanticonceptivos}</p>}
           
         </div>
         <div>
           <h2>Alimentos</h2>
-          <h3>Infusiones</h3>
+          <h4 className="pt-2">Infusiones</h4>
           {
              infusiones && Object.entries(infusiones).map(([key, value]) => (
-                  value &&  <span>{key}  </span>
+                  value &&  <span className='capitalize'>{key}  </span>
              ))
           }
-          <h3>Lácteos</h3>
+          <h4 className="pt-3">Lácteos</h4>
           {
              lacteos && Object.entries(lacteos).map(([key, value]) => (
-                  value &&  <span>{key}  </span>
+                  value &&  <span className='capitalize'>{key}  </span>
              ))
           }
-          <h3>Carnes</h3>
+          <h4 className="pt-3">Carnes</h4>
           {
              carnes && Object.entries(carnes).map(([key, value]) => (
-                  value &&  <span>{key}  </span>
+                  value &&  <span className='capitalize'>{key}  </span>
              ))
           }
-          <h3>Panes</h3>
+          <h4 className="pt-3">Panes</h4>
           {
              panes && Object.entries(panes).map(([key, value]) => (
-                  value &&  <span>{key}  </span>
+                  value &&  <span className='capitalize'>{key}  </span>
              ))
           }
-          <h3>Semillas</h3>
+          <h4 className="pt-3">Semillas</h4>
           {
              semillas && Object.entries(semillas).map(([key, value]) => (
-                  value &&  <span>{key}  </span>
+                  value &&  <span className='capitalize'>{key}  </span>
              ))
           }
-          <h3>Frutas Secas</h3>
+          <h4 className="pt-3">Frutas Secas</h4>
           {
              frutossecos && Object.entries(frutossecos).map(([key, value]) => (
-                  value &&  <span>{key}  </span>
+                  value &&  <span className='capitalize'>{key}  </span>
              ))
           }
-          <h3>Legumbres</h3>
+          <h4 className="pt-3">Legumbres</h4>
           {
              legumbres && Object.entries(legumbres).map(([key, value]) => (
-                  value &&  <span>{key}  </span>
+                  value &&  <span className='capitalize'>{key}  </span>
              ))
           }
         </div>
@@ -158,17 +167,25 @@ const Paciente = () => {
           {
               dieta && (
                   <div>
-                    <p className='normal-case'>{dieta.desayunohora}hs Desayuno: {dieta.desayuno} </p>
+                    {
+                      dieta.desayuno && <p className='normal-case'>{dieta.desayunohora}hs Desayuno: {dieta.desayuno} </p>
+                    }
                     {
                       dieta.colacion &&  <p className='normal-case'>{dieta.colacionhora}hs Colacion: {dieta.colacion} </p>
                     }
                    
-                    <p className='normal-case'>Almuerzo: {dieta.almuerzo} {dieta.almuerzohora}hs</p>
+                    {
+                      dieta.almuerzo && <p className='normal-case'>{dieta.almuerzohora}hs Almuerzo: {dieta.almuerzo} </p>
+                    }
                     {
                       dieta.colaciondos &&  <p className='normal-case'>{dieta.colaciondoshora} Colacion: {dieta.colaciondos} hs</p>
                     }
-                    <p className='normal-case'>{dieta.meriendahora}hs Merienda: {dieta.merienda} </p>
-                    <p className='normal-case'>{dieta.cenahora}hs Cena: {dieta.cena} </p>
+                    {
+                      dieta.merienda && <p className='normal-case'>{dieta.meriendahora}hs Merienda: {dieta.merienda} </p>
+                    }
+                    {
+                      dieta.cena && <p className='normal-case'>{dieta.cenahora}hs Cena: {dieta.cena} </p>
+                    }
                     {
                       dieta.otros &&  <p className='normal-case'>otros: {dieta.otros} {dieta.otroshora}hs</p>
                     }
@@ -178,18 +195,33 @@ const Paciente = () => {
         </div>
         <div>
           <h2>Actividad fisica</h2>
-         
-          
+         {actividad ? (
+          <div>
+
           {actividad.tipo &&  <p className='normal-case'>Tipo: {actividad.tipo} </p>  }
-          {actividad.tiempo &&  <p className='normal-case'>tiempo: {actividad.tiempo} hs</p>   }
-          {actividad.bebidas &&  <p className='normal-case'>bebidas: {actividad.bebidas} </p>  }
+          {actividad.tiempo &&  <p className='normal-case'>Tiempo: {actividad.tiempo} hs</p>   }
+          {actividad.bebidas &&  <p className='normal-case'>Bebidas: {actividad.bebidas} </p>  }
+          </div>
+
+         ): <p>No hay datos de actividad fisica</p>
+         }
+          
         </div>
         <div>
+
+          {otros ? (
+          <div>
           <h2>Otros</h2>
-          
+
           {otros.comidafavorita &&  <p className='normal-case'>Comida favorita: {otros.comidafavorita}</p>          }
           {otros.motivoconsulta &&  <p className='normal-case'>Motivo consulta: {otros.motivoconsulta}</p>          }
-          {otros.comoconociste &&  <p className='normal-case'>Como me conociste: {otros.comoconociste} </p> }         
+          {otros.comoconociste &&  <p className='normal-case'>Como me conociste: {otros.comoconociste} </p> } 
+          </div>
+
+         ) :  <p>No hay datos de otros</p>
+         }
+          
+                 
         </div>
         
         

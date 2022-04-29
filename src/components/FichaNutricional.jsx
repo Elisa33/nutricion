@@ -762,7 +762,7 @@ function FichaNutricional() {
               <div className="flex items-center justify-between py-5">
                 <h4>Desayuno</h4>
                 <label className='flex items-center gap-4'>Hora:
-                    <input className='w-20' type="number" {...register('dieta.desayunohora')} />
+                    <input className='w-20' type="text" pattern="\d*" {...register('dieta.desayunohora')} />
                 </label>
               </div>
               <input className='bottom-line' {...register('dieta.desayuno')} />
@@ -823,7 +823,7 @@ function FichaNutricional() {
                   <input className='bottom-line' {...register('actividad.tipo')} />
                 </label>
                 <label className='w-full'>Horas de entrenamiento por semana
-                  <input className='bottom-line' type="number"{...register('actividad.tiempo')} />
+                  <input className='bottom-line' type="text" pattern="\d*"{...register('actividad.tiempo')} />
                 </label>
                 <label className="flex items-center gap-4 py-4">
                   <span>¿Come algo antes de entrenar?</span>
