@@ -25,13 +25,13 @@
     @apply text-5xl text-white;
   }
   h2 {
-    @apply pb-2 text-3xl text-primary;
+    @apply pb-2 text-3xl text-secondary;
   }
   h3{
-    @apply text-2xl text-gray-600 capitalize;
+    @apply text-2xl capitalize text-primary;
   }
   h4{
-    @apply text-xl capitalize text-secondary;
+    @apply text-xl capitalize text-primary;
   }
   input{
     @apply block p-2 border border-gray-300 rounded bg-neutral focus:outline-none focus:border-olive;

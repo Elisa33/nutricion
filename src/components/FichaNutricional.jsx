@@ -9,7 +9,7 @@ function FichaNutricional() {
   const completeFormStep = ()=>{
     setFormStep(curr => curr + 1)
   }
-  const [ mensaje, setMensaje ] = useState('')
+  const [finishForm, setFinishForm ] = useState(false)
   const { register, handleSubmit, watch, reset, formState: { errors } } = useForm({
     defaultValues: {
       checkbox: false,
@@ -24,7 +24,7 @@ function FichaNutricional() {
         await addDoc(collection(db, "answers"),{
           data
         })
-        setMensaje('El formulario ha sido enviado correctamente')
+        setFinishForm(true)
         reset();
       } catch (error) {
       setMensaje('Hubo un error, intente nuevamente')
@@ -32,13 +32,17 @@ function FichaNutricional() {
     }
   }
 
-
   return (
- 
-     
     <div className="bg-green">
       <div className="pt-10 wrapper">
-      
+      {
+        finishForm ? (
+          <div className="flex flex-col justify-center h-full min-h-screen gap-10 pt-4 text-xl text-center text-white">
+            <div>El formulario ha sido enviado correctamente</div>
+            <div className='text-3xl animate-pulse'>Muchas gracias!</div>
+          </div>
+        ) : (
+
         <form onSubmit={handleSubmit(onSubmit)} className="grid gap-8 pb-12">
           <h1 className='font-bold'>Ficha nutricional</h1>
           {/* Datos personales */}
@@ -61,7 +65,7 @@ function FichaNutricional() {
             <input className='bottom-line' type="text" inputmode="numeric" {...register("datos.altura")} />
             </label>
             <label>Peso
-            <input className='bottom-line' type="text" inputmode="decimal" {...register("datos.peso")} />
+            <input className='bottom-line' type="text" inputmode="numeric" {...register("datos.peso")} />
             </label>
             <label>Email *
               <input className='bottom-line'
@@ -76,7 +80,7 @@ function FichaNutricional() {
               />
                   {errors.email && <span>Ingresa tu email</span>}
                   </label>
-            <label>Teléfono
+            <label>Teléfono *
               <input className='bottom-line' inputmode="tel"{...register("datos.telefono", { required: true })} />
             </label>
             {
@@ -206,7 +210,7 @@ function FichaNutricional() {
               </label>
 
               {
-                watch("hc.estrenimientos") && (
+                watch("hc.estrenimiento") && (
                   <label className='w-full'>Especificar
                     <input className='bottom-line' {...register('hc.textoestrenimiento')} />
                   </label>)
@@ -569,7 +573,7 @@ function FichaNutricional() {
                       </svg>
                     </span>avellana
                   </label>
-                  <input className="invisible inp-cbx" id="pasasuva" type="checkbox" {...register('frutossecos.pasasuva')} />
+                  <input className="invisible inp-cbx" id="pasasuva" type="checkbox" {...register('frutossecos.pasas_uva')} />
                   <label className="cbx alimentos" htmlFor="pasasuva"><span>
                       <svg width="12px" height="9px" viewBox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>
@@ -867,10 +871,12 @@ function FichaNutricional() {
                 </label>
               </div>
               <button type="submit" className='w-full py-3 text-white rounded-lg hover:bg-accent hover:shadow-lg bg-primary'>Confirmar y enviar formulario</button>
-              <div className="pt-4 text-center text-primary">{mensaje}</div>
+              
             </section>
           )}
         </form>
+        )
+      }
       </div>
     </div>
   

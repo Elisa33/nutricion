@@ -54,8 +54,8 @@ const Paciente = () => {
           <h2>Datos del Paciente</h2>
           {
               datos && (
-                  <div>
-                    <p className='capitalize'>Nombre completo: {datos.nombre} {datos.apellido}</p>
+                  <div className='space-y-1'>
+                    <p className=''><span className="text-green">Nombre completo:</span> {datos.nombre} {datos.apellido}</p>
                     <div className='flex gap-4 capitalize'>
                     <p>Edad: {datos.edad} </p> 
                     <p>Altura: {datos.altura} </p> 
@@ -68,17 +68,14 @@ const Paciente = () => {
           }
         </div>
        
-
-        
         <div>
           <h2>Historia Clinica</h2>
 
           {
             hc &&(
-              <div>
-
+              <div className='space-y-1'>
                 {hc.suplementos && <p>Suplementos: {hc.textosuplementos}</p>}
-                {hc.dieta && <p>Sieta: {hc.textodieta}</p>}
+                {hc.dieta && <p>Dieta: {hc.textodieta}</p>}
                 {hc.fuera && <p>Come afuera: {hc.textofuera}</p>}
                 {hc.metabolica && <p>Enfermedad metabólica: {hc.textometabolica}</p>}
                 {hc.alergias && <p>Alergias: {hc.textoalergias}</p>}
@@ -91,11 +88,9 @@ const Paciente = () => {
                 {hc.renal && <p>Renal: {hc.textorenal}</p>}
                 {hc.medicacion && <p>Medicacion: {hc.textomedicacion}</p>}
                 {hc.anticonceptivos && <p>Anticonceptivos: {hc.textoanticonceptivos}</p>}
-
               </div>
             )
           }
-          
           
         </div>
         <div>
@@ -149,7 +144,7 @@ const Paciente = () => {
           
           {
              verduras && Object.entries(verduras).map(([key, value]) => (
-                  value &&  <p>{key}</p>
+                  value &&  <p className='capitalize'>{key}</p>
              ))
           }
         </div>
@@ -158,7 +153,7 @@ const Paciente = () => {
           
           {
              frutas && Object.entries(frutas).map(([key, value]) => (
-                  value &&  <p>{key}</p>
+                  value &&  <p className='capitalize'>{key}</p>
              ))
           }
         </div>
@@ -178,7 +173,7 @@ const Paciente = () => {
                       dieta.almuerzo && <p className='normal-case'>{dieta.almuerzohora}hs Almuerzo: {dieta.almuerzo} </p>
                     }
                     {
-                      dieta.colaciondos &&  <p className='normal-case'>{dieta.colaciondoshora} Colacion: {dieta.colaciondos} hs</p>
+                      dieta.colaciondos &&  <p className='normal-case'>{dieta.colaciondoshora}hs Colacion: {dieta.colaciondos}</p>
                     }
                     {
                       dieta.merienda && <p className='normal-case'>{dieta.meriendahora}hs Merienda: {dieta.merienda} </p>

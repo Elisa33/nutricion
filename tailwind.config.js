@@ -18,6 +18,11 @@ module.exports = {
       'accent': '#784F31',
       'neutral': '#fafafa',
     },
+    fontFamily: {
+      'hand': ['Marck Script'],
+      'sans': ['Raleway', 'sans-serif']
+      
+    },
     extend: {},
   },
   plugins: [
