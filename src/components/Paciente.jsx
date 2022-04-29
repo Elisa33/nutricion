@@ -55,7 +55,7 @@ const Paciente = () => {
           {
               datos && (
                   <div className='space-y-1'>
-                    <p className=''><span className="text-green">Nombre completo:</span> {datos.nombre} {datos.apellido}</p>
+                    <p className='text-2xl'>{datos.nombre} {datos.apellido}</p>
                     <div className='flex gap-4 capitalize'>
                     <p>Edad: {datos.edad} </p> 
                     <p>Altura: {datos.altura} </p> 
@@ -98,44 +98,43 @@ const Paciente = () => {
           <h4 className="pt-2">Infusiones</h4>
           {
              infusiones && Object.entries(infusiones).map(([key, value]) => (
-                  value &&  <span className='capitalize'>{key.replace('_', ' ')}  </span>
+                  value &&  <span className='pr-2 capitalize'>{key.replace('_', ' ')}  </span>
              ))
           }
           <h4 className="pt-3">Lácteos</h4>
           {
              lacteos && Object.entries(lacteos).map(([key, value]) => (
-                  value &&  <span className='capitalize'>{key}  </span>
+                  value &&  <span className='pr-3 capitalize'>{key}  </span>
              ))
           }
           <h4 className="pt-3">Carnes</h4>
           {
              carnes && Object.entries(carnes).map(([key, value]) => (
-                  value &&  <span className='capitalize'>{key}  </span>
+                  value &&  <span className='pr-3 capitalize'>{key}  </span>
              ))
           }
           <h4 className="pt-3">Panes</h4>
           {
              panes && Object.entries(panes).map(([key, value]) => (
-                  value &&  <span className='normal-case'>{key.replace('_', ' ')}  </span>
+                  value &&  <span className='pr-3 capitalize'>{key.replace('_', ' ')}  </span>
              ))
           }
           <h4 className="pt-3">Semillas</h4>
           {
              semillas && Object.entries(semillas).map(([key, value]) => (
-                  value &&  <span className='capitalize'>{key}  </span>
+                  value &&  <span className='pr-3 capitalize'>{key}  </span>
              ))
           }
           <h4 className="pt-3">Frutas Secas</h4>
           {
              frutossecos && Object.entries(frutossecos).map(([key, value]) => (
-                  value &&  <span className='capitalize'>{key.replace('_', ' ')}  </span>
-                  //replace('dog', 'monkey')
+                  value &&  <span className='pr-3 capitalize'>{key.replace('_', ' ')}  </span>
              ))
           }
           <h4 className="pt-3">Legumbres</h4>
           {
              legumbres && Object.entries(legumbres).map(([key, value]) => (
-                  value &&  <span className='capitalize'>{key}  </span>
+                  value &&  <span className='pr-3 capitalize'>{key}  </span>
              ))
           }
         </div>
@@ -145,7 +144,7 @@ const Paciente = () => {
           
           {
              verduras && Object.entries(verduras).map(([key, value]) => (
-                  value &&  <p className='capitalize'>{key}</p>
+                  value &&  <p className='capitalize'>{key.replace('_', ' ')}</p>
              ))
           }
         </div>

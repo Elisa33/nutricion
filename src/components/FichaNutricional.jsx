@@ -455,7 +455,7 @@ function FichaNutricional() {
                       </svg>
                     </span>Galletitas de agua
                   </label>
-                  <input className="invisible inp-cbx" id="galletitassinsal" type="checkbox" {...register('panes.galletitas_sin_sal')} />
+                  <input className="invisible inp-cbx" id="galletitassinsal" type="checkbox" {...register('panes.galletitas_sinsal')} />
                   <label className="cbx alimentos" htmlFor="galletitassinsal"><span>
                       <svg width="12px" height="9px" viewBox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>
@@ -682,9 +682,9 @@ function FichaNutricional() {
                 <li><input type="checkbox" id="berenjena" {...register('verduras.berenjena')} value="berenjena"/><label htmlFor="berenjena">berenjena</label></li>
                 <li><input type="checkbox" id="berro" {...register('verduras.berro')} value="berro"/><label htmlFor="berro">berro</label></li>
                 <li><input type="checkbox" id="brocoli" {...register('verduras.brocoli')} value="brocoli"/><label htmlFor="brocoli">brocoli</label></li>
-                <li><input type="checkbox" id="brotesdesoja" {...register('verduras.brotesdesoja')} value="brotesdesoja"/><label htmlFor="brotesdesoja">brotes de soja</label></li>
+                <li><input type="checkbox" id="brotesdesoja" {...register('verduras.brotes_soja')} value="brotesdesoja"/><label htmlFor="brotesdesoja">brotes de soja</label></li>
                 <li><input type="checkbox" id="cebolla" {...register('verduras.cebolla')} value="cebolla"/><label htmlFor="cebolla">cebolla</label></li>
-                <li><input type="checkbox" id="cebollaverdeo" {...register('verduras.cebollaverdeo')} value="cebollaverdeo"/><label htmlFor="cebollaverdeo">cebolla de verdeo</label></li>
+                <li><input type="checkbox" id="cebollaverdeo" {...register('verduras.cebolla_verdeo')} value="cebollaverdeo"/><label htmlFor="cebollaverdeo">cebolla de verdeo</label></li>
                 <li><input type="checkbox" id="chauchas" {...register('verduras.chauchas')} value="chauchas"/><label htmlFor="chauchas">chauchas</label></li>
                 <li><input type="checkbox" id="choclo" {...register('verduras.choclo')} value="choclo"/><label htmlFor="choclo">choclo</label></li>
                 <li><input type="checkbox" id="coliflor" {...register('verduras.coliflor')} value="coliflor"/><label htmlFor="coliflor">coliflor</label></li>
@@ -696,8 +696,8 @@ function FichaNutricional() {
                 <li><input type="checkbox" id="hinojo" {...register('verduras.hinojo')} value="hinojo"/><label htmlFor="hinojo">hinojo</label></li>
                 <li><input type="checkbox" id="lechuga" {...register('verduras.lechuga')} value="lechuga"/><label htmlFor="lechuga">lechuga</label></li>
                 <li><input type="checkbox" id="mandioca" {...register('verduras.mandioca')} value="mandioca"/><label htmlFor="mandioca">mandioca</label></li>
-                <li><input type="checkbox" id="morronrojo" {...register('verduras.morronrojo')} value="morronrojo"/><label htmlFor="morronrojo">morrón rojo</label></li>
-                <li><input type="checkbox" id="morronverde" {...register('verduras.morronverde')} value="morronverde"/><label htmlFor="morronverde">morrón verde</label></li>
+                <li><input type="checkbox" id="morronrojo" {...register('verduras.morron_rojo')} value="morronrojo"/><label htmlFor="morronrojo">morrón rojo</label></li>
+                <li><input type="checkbox" id="morronverde" {...register('verduras.morron_verde')} value="morronverde"/><label htmlFor="morronverde">morrón verde</label></li>
                 <li><input type="checkbox" id="nabo" {...register('verduras.nabo')} value="nabo"/><label htmlFor="nabo">nabo</label></li>
                 <li><input type="checkbox" id="pepino" {...register('verduras.pepino')} value="pepino"/><label htmlFor="pepino">pepino</label></li>
                 <li><input type="checkbox" id="tomate" {...register('verduras.tomate')} value="tomate"/><label htmlFor="tomate">tomate</label></li>
@@ -709,7 +709,7 @@ function FichaNutricional() {
                 <li><input type="checkbox" id="rabanito" {...register('verduras.rabanito')} value="rabanito"/><label htmlFor="rabanito">rabanito</label></li>
                 <li><input type="checkbox" id="rabano" {...register('verduras.rabano')} value="rabano"/><label htmlFor="rabano">rábano</label></li>
                 <li><input type="checkbox" id="remolacha" {...register('verduras.remolacha')} value="remolacha"/><label htmlFor="remolacha">remolacha</label></li>
-                <li><input type="checkbox" id="repollitobruselas" {...register('verduras.repollitobruselas')} value="repollitobruselas"/><label htmlFor="repollitobruselas">repollito de bruselas</label></li>
+                <li><input type="checkbox" id="repollitobruselas" {...register('verduras.repollito_bruselas')} value="repollitobruselas"/><label htmlFor="repollitobruselas">repollito de bruselas</label></li>
                 <li><input type="checkbox" id="repollo" {...register('verduras.repollo')} value="repollo"/><label htmlFor="repollo">repollo</label></li>
                 <li><input type="checkbox" id="rucula" {...register('verduras.rucula')} value="rucula"/><label htmlFor="rucula">rucula</label></li>
                 <li><input type="checkbox" id="zanahoria" {...register('verduras.zanahoria')} value="zanahoria"/><label htmlFor="zanahoria">zanahoria</label></li>
