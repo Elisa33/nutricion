@@ -339,7 +339,7 @@ function FichaNutricional() {
                       </svg>
                     </span>mate
                   </label>
-                  <input className="invisible inp-cbx" id="matecocido" type="checkbox" {...register('infusiones.matecocido')} />
+                  <input className="invisible inp-cbx" id="matecocido" type="checkbox" {...register('infusiones.mate_cocido')} />
                   <label className="cbx alimentos" htmlFor="matecocido"><span>
                       <svg width="12px" height="9px" viewBox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>
@@ -434,42 +434,42 @@ function FichaNutricional() {
                   </div>
                 <div className="py-6">
                   <h3>Pan y galletitas</h3>
-                  <input className="invisible inp-cbx" id="panblanco" type="checkbox" {...register('panes.panblanco')} />
+                  <input className="invisible inp-cbx" id="panblanco" type="checkbox" {...register('panes.pan_blanco')} />
                   <label className="cbx alimentos" htmlFor="panblanco"><span>
                       <svg width="12px" height="9px" viewBox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>
                       </svg>
                     </span>Pan Blanco
                   </label>
-                  <input className="invisible inp-cbx" id="pansalvado" type="checkbox" {...register('panes.pansalvado')} />
+                  <input className="invisible inp-cbx" id="pansalvado" type="checkbox" {...register('panes.pan_salvado')} />
                   <label className="cbx alimentos" htmlFor="pansalvado"><span>
                       <svg width="12px" height="9px" viewBox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>
                       </svg>
                     </span>Pan de Salvado
                   </label>
-                  <input className="invisible inp-cbx" id="galletitasagua" type="checkbox" {...register('panes.galletitasagua')} />
+                  <input className="invisible inp-cbx" id="galletitasagua" type="checkbox" {...register('panes.galletitas_agua')} />
                   <label className="cbx alimentos" htmlFor="galletitasagua"><span>
                       <svg width="12px" height="9px" viewBox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>
                       </svg>
                     </span>Galletitas de agua
                   </label>
-                  <input className="invisible inp-cbx" id="galletitassinsal" type="checkbox" {...register('panes.galletitassinsal')} />
+                  <input className="invisible inp-cbx" id="galletitassinsal" type="checkbox" {...register('panes.galletitas_sin_sal')} />
                   <label className="cbx alimentos" htmlFor="galletitassinsal"><span>
                       <svg width="12px" height="9px" viewBox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>
                       </svg>
                     </span>Galletitas sin sal
                   </label>
-                  <input className="invisible inp-cbx" id="galletitasdulces" type="checkbox" {...register('panes.galletitasdulces')} />
+                  <input className="invisible inp-cbx" id="galletitasdulces" type="checkbox" {...register('panes.galletitas_dulces')} />
                   <label className="cbx alimentos" htmlFor="galletitasdulces"><span>
                       <svg width="12px" height="9px" viewBox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>
                       </svg>
                     </span>Galletitas dulces
                   </label>
-                  <input className="invisible inp-cbx" id="galletitasarroz" type="checkbox" {...register('panes.galletitasarroz')} />
+                  <input className="invisible inp-cbx" id="galletitasarroz" type="checkbox" {...register('panes.galletitas_arroz')} />
                   <label className="cbx alimentos" htmlFor="galletitasarroz"><span>
                       <svg width="12px" height="9px" viewBox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>
@@ -580,21 +580,21 @@ function FichaNutricional() {
                       </svg>
                     </span>pasas uva
                   </label>
-                  <input className="invisible inp-cbx" id="pasasarandano" type="checkbox" {...register('frutossecos.pasasarandano')} />
+                  <input className="invisible inp-cbx" id="pasasarandano" type="checkbox" {...register('frutossecos.pasas_arandano')} />
                   <label className="cbx alimentos" htmlFor="pasasarandano"><span>
                       <svg width="12px" height="9px" viewBox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>
                       </svg>
                     </span>pasas arandano
                   </label>
-                  <input className="invisible inp-cbx" id="bananachips" type="checkbox" {...register('frutossecos.bananachips')} />
+                  <input className="invisible inp-cbx" id="bananachips" type="checkbox" {...register('frutossecos.banana_chips')} />
                   <label className="cbx alimentos" htmlFor="bananachips"><span>
                       <svg width="12px" height="9px" viewBox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>
                       </svg>
                     </span>banana chips
                   </label>
-                  <input className="invisible inp-cbx" id="jengibrechips" type="checkbox" {...register('frutossecos.jengibrechips')} />
+                  <input className="invisible inp-cbx" id="jengibrechips" type="checkbox" {...register('frutossecos.jengibre_chips')} />
                   <label className="cbx alimentos" htmlFor="jengibrechips"><span>
                       <svg width="12px" height="9px" viewBox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>

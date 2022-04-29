@@ -98,7 +98,7 @@ const Paciente = () => {
           <h4 className="pt-2">Infusiones</h4>
           {
              infusiones && Object.entries(infusiones).map(([key, value]) => (
-                  value &&  <span className='capitalize'>{key}  </span>
+                  value &&  <span className='capitalize'>{key.replace('_', ' ')}  </span>
              ))
           }
           <h4 className="pt-3">Lácteos</h4>
@@ -116,7 +116,7 @@ const Paciente = () => {
           <h4 className="pt-3">Panes</h4>
           {
              panes && Object.entries(panes).map(([key, value]) => (
-                  value &&  <span className='capitalize'>{key}  </span>
+                  value &&  <span className='normal-case'>{key.replace('_', ' ')}  </span>
              ))
           }
           <h4 className="pt-3">Semillas</h4>
@@ -128,7 +128,8 @@ const Paciente = () => {
           <h4 className="pt-3">Frutas Secas</h4>
           {
              frutossecos && Object.entries(frutossecos).map(([key, value]) => (
-                  value &&  <span className='capitalize'>{key}  </span>
+                  value &&  <span className='capitalize'>{key.replace('_', ' ')}  </span>
+                  //replace('dog', 'monkey')
              ))
           }
           <h4 className="pt-3">Legumbres</h4>
