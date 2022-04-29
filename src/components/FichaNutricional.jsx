@@ -39,7 +39,7 @@ function FichaNutricional() {
         finishForm ? (
           <div className="flex flex-col justify-center h-full min-h-screen gap-10 pt-4 text-xl text-center text-white">
             <div>El formulario ha sido enviado correctamente</div>
-            <div className='text-3xl animate-pulse'>Muchas gracias!</div>
+            <div className='text-3xl animate-pulse'>¡Muchas gracias!</div>
           </div>
         ) : (
 
