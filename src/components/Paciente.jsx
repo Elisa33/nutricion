@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { doc, getDoc } from "firebase/firestore";
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { db } from '../firebase'
 
 const Paciente = () => {
@@ -47,7 +47,8 @@ const Paciente = () => {
     
   return (
     <div className="bg-green">
-      <div className="pt-10 wrapper">
+      <div className="relative py-10 wrapper">
+      <Link to={`/pacientes`} className="absolute mt-5 text-white capitalize bottom-2 right-10 hover:text-accent ">Volver</Link>
         <section className='grid gap-5 px-5 py-8 rounded-lg bg-neutral'>
 
         <div>
