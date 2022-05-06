@@ -33,7 +33,7 @@ function FichaNutricional() {
   }
 
   return (
-    <div className="bg-gradient-to-b from-yellow to-primary">
+    <div className="h-screen bg-gradient-to-b from-yellow to-primary">
       <div className="pt-10 wrapper">
       {
         finishForm ? (
@@ -48,7 +48,7 @@ function FichaNutricional() {
           {/* Datos personales */}
           { formStep > 0 && (
             <section className="grid gap-5 md:grid-cols-2">
-            <h2>Datos personales</h2>
+            <h2 className="col-span-2">Datos personales</h2>
             <label >Nombre *
               <input className='bottom-line' {...register("datos.nombre", { required: true })}/>
               {errors.nombre && <span className='text-accent'>Ingresa tu nombre</span>}
